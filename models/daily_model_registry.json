@@ -1,0 +1,22 @@
+{
+  "models": [
+    {
+      "model_name": "daily_traffic_model_v1",
+      "target": "traffic_target_next_day",
+      "MAE": 80.5297898505604,
+      "RMSE": 173.96349990793004,
+      "R2": 0.95210849010762,
+      "sigma_val": 48.43938107110154,
+      "artifact_dir": "models/daily/traffic_model"
+    },
+    {
+      "model_name": "daily_congestion_model_v1",
+      "target": "congestion_target_next_day",
+      "MAE": 0.12142622695569588,
+      "RMSE": 0.20648874457022753,
+      "R2": 0.9635743355224622,
+      "sigma_val": 0.1500209102507216,
+      "artifact_dir": "models/daily/congestion_model"
+    }
+  ]
+}

@@ -338,7 +338,7 @@ body {
 }
 
 /* ── Premium port markers (MapLibre HTML markers, sized hit box) ── */
-.sd-port-icon { background: transparent; border: none; width: 34px; height: 34px; position: relative; cursor: pointer; }
+.sd-port-icon { background: transparent; border: none; width: 34px; height: 34px; position: absolute; top: 0; left: 0; cursor: pointer; }
 .sd-port-marker { position: absolute; inset: 0; display: block; }
 .sd-port-ring {
   position: absolute;

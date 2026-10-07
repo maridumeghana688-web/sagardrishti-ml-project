@@ -5,6 +5,8 @@ __pycache__/
 .venv/
 venv/
 .env
+.env.*
+!.env.example
 *.egg-info/
 .pytest_cache/
 .mypy_cache/
@@ -25,10 +27,19 @@ data/processed/*
 !data/processed/.gitkeep
 data/features/*
 !data/features/.gitkeep
+# Raw pipeline downloads / derived blobs / redundant exports (local only, GBs)
+data/kaggle_output/
+data/kaggle_output_run5/
+data/kaggle_output_run7/
+data/derived/
+data/ml/sagardrishti_india_environment.csv
 
 # Models & large artifacts
 models/*
 !models/.gitkeep
+!models/daily_model_registry.json
+!models/model_registry.json
+!models/README.md
 *.pkl
 *.joblib
 *.h5
