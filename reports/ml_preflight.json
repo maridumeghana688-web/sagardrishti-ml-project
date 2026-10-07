@@ -1,0 +1,327 @@
+{
+  "datasets": {
+    "master": {
+      "path": "data/ml/sagardrishti_master_training.parquet",
+      "rows": 1548,
+      "columns": [
+        "port_id",
+        "port_name",
+        "time_month",
+        "time",
+        "vessel_activity_count",
+        "vessel_presence_hours",
+        "vessel_count_sum",
+        "mean_distance_km",
+        "n_flags",
+        "latitude",
+        "longitude",
+        "traffic_index",
+        "traffic_target",
+        "target_kind",
+        "provenance",
+        "vessel_count_note",
+        "congestion_index",
+        "port_lat",
+        "port_lon",
+        "sst_monthly_mean",
+        "cmems_thetao",
+        "cmems_so",
+        "cmems_uo",
+        "cmems_vo",
+        "current_magnitude",
+        "in_india_mask",
+        "env_grid_lat",
+        "env_grid_lon",
+        "port_harbor_size",
+        "port_harbor_type",
+        "port_shelter",
+        "port_max_vessel",
+        "port_tide_range",
+        "leakage_note",
+        "waiting_time_mean_hours",
+        "waiting_target_provenance"
+      ],
+      "size_bytes": 100283,
+      "ports": 43,
+      "months": 36,
+      "range": [
+        "2021-01-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {
+        "sst_monthly_mean": 1.0,
+        "cmems_thetao": 1.0,
+        "cmems_so": 1.0,
+        "cmems_uo": 1.0,
+        "cmems_vo": 1.0,
+        "current_magnitude": 1.0,
+        "in_india_mask": 1.0,
+        "waiting_time_mean_hours": 0.9948
+      }
+    },
+    "environment": {
+      "path": "data/ml/sagardrishti_india_environment.parquet",
+      "rows": 604800,
+      "columns": [
+        "time",
+        "lat",
+        "lon",
+        "sst_monthly_mean",
+        "cmems_thetao",
+        "cmems_so",
+        "cmems_uo",
+        "cmems_vo",
+        "current_magnitude",
+        "in_india_mask",
+        "sst_units",
+        "cmems_ocean_mask_note",
+        "provenance_noaa",
+        "provenance_cmems",
+        "spatial_join_method"
+      ],
+      "size_bytes": 13451313,
+      "ports": null,
+      "months": 36,
+      "range": [
+        "2021-01-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {
+        "sst_monthly_mean": 0.2851,
+        "cmems_thetao": 0.4058,
+        "cmems_so": 0.4058,
+        "cmems_uo": 0.4058,
+        "cmems_vo": 0.4058,
+        "current_magnitude": 0.4058
+      }
+    },
+    "vessel": {
+      "path": "data/ml/sagardrishti_india_vessel_activity.parquet",
+      "rows": 5887415,
+      "columns": [
+        "lat",
+        "lon",
+        "time",
+        "flag",
+        "vessel_count",
+        "vessel_presence_hours",
+        "time_month",
+        "lat_cell",
+        "lon_cell",
+        "source",
+        "provenance",
+        "observed_vs_derived"
+      ],
+      "size_bytes": 17378138,
+      "ports": null,
+      "months": 36,
+      "range": [
+        "2021-01-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {
+        "flag": 0.0151
+      }
+    },
+    "traffic": {
+      "path": "data/ml/sagardrishti_port_traffic.parquet",
+      "rows": 1548,
+      "columns": [
+        "port_id",
+        "port_name",
+        "time_month",
+        "time",
+        "vessel_activity_count",
+        "vessel_presence_hours",
+        "vessel_count_sum",
+        "mean_distance_km",
+        "n_flags",
+        "latitude",
+        "longitude",
+        "traffic_index",
+        "traffic_target",
+        "target_kind",
+        "provenance",
+        "vessel_count_note"
+      ],
+      "size_bytes": 71979,
+      "ports": 43,
+      "months": 36,
+      "range": [
+        "2021-01-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {}
+    },
+    "congestion": {
+      "path": "data/ml/sagardrishti_port_congestion.parquet",
+      "rows": 1548,
+      "columns": [
+        "port_id",
+        "port_name",
+        "time",
+        "latitude",
+        "longitude",
+        "vessel_presence_hours",
+        "vessel_count_sum",
+        "vessel_activity_count",
+        "norm_vessel_presence_hours",
+        "norm_vessel_count_sum",
+        "norm_vessel_activity_count",
+        "congestion_index",
+        "congestion_formula",
+        "congestion_spatial",
+        "congestion_temporal",
+        "congestion_kind",
+        "provenance"
+      ],
+      "size_bytes": 76617,
+      "ports": 43,
+      "months": 36,
+      "range": [
+        "2021-01-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {}
+    },
+    "waiting": {
+      "path": "data/ml/sagardrishti_port_waiting_time.parquet",
+      "rows": 8,
+      "columns": [
+        "port_id",
+        "port_name",
+        "unlocode",
+        "month",
+        "time",
+        "vessel_count",
+        "valid_waiting_events",
+        "waiting_time_mean_hours",
+        "waiting_time_median_hours",
+        "waiting_time_p25_hours",
+        "waiting_time_p75_hours",
+        "waiting_time_max_hours",
+        "source",
+        "method",
+        "coverage_start",
+        "coverage_end",
+        "provenance",
+        "by_type_detail"
+      ],
+      "size_bytes": 14527,
+      "ports": 1,
+      "months": 8,
+      "range": [
+        "2023-04-01 00:00:00+00:00",
+        "2023-12-01 00:00:00+00:00"
+      ],
+      "null_pct": {
+        "unlocode": 1.0,
+        "waiting_time_median_hours": 1.0,
+        "waiting_time_p25_hours": 1.0,
+        "waiting_time_p75_hours": 1.0,
+        "waiting_time_max_hours": 1.0
+      }
+    },
+    "ports": {
+      "path": "data/reference/india_ports.parquet",
+      "rows": 44,
+      "columns": [
+        "port_id",
+        "port_name",
+        "country",
+        "latitude",
+        "longitude",
+        "wpi_index_no",
+        "wpi_region_no",
+        "harbor_size",
+        "harbor_type",
+        "shelter",
+        "chart_ref",
+        "pub_ref",
+        "max_vessel",
+        "tide_range",
+        "un_locode",
+        "source",
+        "source_version",
+        "provenance"
+      ],
+      "size_bytes": 14233,
+      "ports": 44,
+      "months": null,
+      "range": null,
+      "null_pct": {
+        "un_locode": 1.0
+      }
+    }
+  },
+  "libraries": {
+    "sklearn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "pyarrow": "25.0.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "catboost": "MISSING",
+    "shap": "0.52.0",
+    "joblib": "1.6.0",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU 6GB (present; CPU used - 1548 rows, justified)",
+  "targets": {
+    "traffic_index": {
+      "mean": 55.76140068159901,
+      "median": 59.36907949210198,
+      "std": 20.459647967076556,
+      "min": 2.2311547025799614,
+      "max": 98.6956016552117,
+      "nulls": 0
+    },
+    "congestion_index": {
+      "mean": 0.18245876238156783,
+      "median": 0.14909812023015706,
+      "std": 0.16546578743900217,
+      "min": 0.00064,
+      "max": 0.8952503358464703,
+      "nulls": 0
+    },
+    "waiting_time_mean_hours": {
+      "labels": 8,
+      "ports": 1,
+      "status": "EXPERIMENTAL_INSUFFICIENT_LABELS (8 labels, 1 port)"
+    }
+  },
+  "proposed_features": [
+    "month/year/quarter/sin/cos",
+    "WPI static (lat/lon/harbor/tide)",
+    "vessel activity (activity_count, presence_hours, vessel_count_sum~approx)",
+    "environment (sst, thetao, so, uo, vo, current) + train-only anomalies",
+    "lags 1-3 + rolling 3/6m (past only)",
+    "defensible interactions"
+  ],
+  "proposed_split": {
+    "grain": "port-month",
+    "train": {
+      "start": "2021-01",
+      "end": "2022-12",
+      "note": "24 months x ports with activity"
+    },
+    "validation": {
+      "start": "2023-01",
+      "end": "2023-06"
+    },
+    "test": {
+      "start": "2023-07",
+      "end": "2023-12"
+    },
+    "method": "temporal split (no shuffling); all features contemporaneous month-M only",
+    "leakage": "PASS by construction (same-month joins only)",
+    "waiting_time": "excluded (unavailable)",
+    "targets": {
+      "port_traffic": "traffic_target",
+      "congestion": "congestion_index",
+      "waiting_time": "waiting_time_mean_hours (sparse: Paradip Apr-Dec 2023 excl Nov; use subset training)"
+    },
+    "waiting_time_note": "sparse target: 8/1548 master rows; train/eval on covered subset only; never impute"
+  }
+}

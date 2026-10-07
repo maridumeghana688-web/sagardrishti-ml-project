@@ -1,0 +1,95 @@
+{
+  "outcome": "SPARSE SUCCESS: genuine monthly waiting means acquired for 1 port x 8 months; all other avenues documented below as unavailable",
+  "acquired": {
+    "source": "Paradip Port Authority monthly Performance Parameter PDFs",
+    "urls": [
+      "https://www.paradipport.org/PerfermParam.aspx",
+      "https://www.paradipport.org/Writereaddata/Perfm_Param/Perf_<Mon>23.pdf"
+    ],
+    "access": "open HTTP, no key; 11/12 PDFs retrieved with retries+backoff+checkpoints (Nov23 404 both spellings)",
+    "coverage": "Paradip (WPI 49535) 2023-04..2023-10 + 2023-12 (8 port-months, 1785 vessels)",
+    "fields": "monthly AVG PREBERTHING WAITING TIME by vessel type + TOTAL, NUMBERS OF VESSEL (SAILED) by type + TOTAL",
+    "definition_fit": "EXACT: time from arrival at reporting station to operational berth excl. inward movement",
+    "license": "Indian government port authority publication (facts/statistics); extraction documented, no redistribution of full PDFs in repo outputs"
+  },
+  "investigated_rejected": [
+    {
+      "source": "data.gov.in OGD catalogs (Average Pre-Berthing Detention; Average Turn Round Time)",
+      "urls": [
+        "https://www.data.gov.in/catalog/average-pre-berthing-detention",
+        "https://www.data.gov.in/catalog/average-turn-round-time-major-ports"
+      ],
+      "status": "resource lists render empty without JS session; API requires free API key (none in .env/Kaggle Secrets); not pursued to avoid credential creation scope creep",
+      "coverage": "yearly granularity per catalog metadata in any case - unusable for monthly master without fabrication"
+    },
+    {
+      "source": "MoPSW Basic Port Statistics PDFs (Approve BPS 2022-23 etc.)",
+      "urls": [
+        "https://shipmin.gov.in/sites/default/files/Approve%20BPS%202022-23.pdf"
+      ],
+      "status": "accessible; tables 2.1.16/2.1.24 give yearly port-wise PBDT 2021-22 & 2022-23",
+      "reject_reason": "YEARLY grain only; joining yearly means to months = imputation = fabrication. Used as definitional cross-reference only"
+    },
+    {
+      "source": "dataful.in dataset 20767 (MoPSW mirror, yearly PBDT by port x vessel type, 1764 rows)",
+      "url": "https://dataful.in/datasets/20767/",
+      "status": "page accessible; structured CSV behind download UI",
+      "reject_reason": "YEARLY grain (same as BPS source) + third-party mirror licensing ambiguity; yearly grain unusable for monthly target"
+    },
+    {
+      "source": "JNPA monthly performance reports",
+      "url": "https://www.jnport.gov.in/page/monthly-performance-report/bnFrbHAzS0NhTlR2eDFBYm1LTzlzUT09",
+      "status": "page keeps current month only (Aug 2026 at probe); no 2021-2023 archive",
+      "reject_reason": "no retrievable history"
+    },
+    {
+      "source": "Chennai port performance indicators",
+      "url": "https://www.chennaiport.gov.in/api/static/default/inner_content/perfindicators.pdf",
+      "status": "TLS certificate verify failure from sandbox (4 attempts); not retried with verification disabled (security)",
+      "reject_reason": "inaccessible + current-snapshot (not monthly archive) per search excerpt"
+    },
+    {
+      "source": "Cochin daily vessel positions",
+      "url": "https://cochinport.gov.in/vessel-position",
+      "status": "accessible; daily berth + berthing-date tables",
+      "reject_reason": "no anchorage-arrival timestamps; waiting not derivable without arbitrary dwell assumptions"
+    },
+    {
+      "source": "Sagar Unnati dashboard",
+      "url": "http://shipmin.dashboard.nic.in/turn_round_time",
+      "status": "transport error on http and https (host unreachable from sandbox)",
+      "reject_reason": "inaccessible"
+    },
+    {
+      "source": "Indiastat PBDT tables",
+      "url": "https://www.indiastat.com/data/transport/average-pre-berthing-detention-by-major-port-reason",
+      "status": "paywalled commercial",
+      "reject_reason": "no access; yearly grain regardless"
+    },
+    {
+      "source": "World Bank CPPI / IHS Markit AIS",
+      "status": "methodology uses total vessel time-in-port, not waiting-before-berth; event-level data not public",
+      "reject_reason": "definition mismatch + no access"
+    },
+    {
+      "source": "Open AIS (AISHub etc.) / commercial AIS (Spire/exactEarth)",
+      "status": "real-time only, no 2021-2023 history; commercial needs contracts",
+      "reject_reason": "no historical event data; global bulk download would violate India-only rule"
+    },
+    {
+      "source": "GFW 4Wings presence (already held)",
+      "status": "monthly presence aggregates, no arrival/berth events",
+      "reject_reason": "calling presence-hours 'waiting' explicitly prohibited"
+    },
+    {
+      "source": "LDB Logistics Databank dwell reports",
+      "status": "container port/CFS/ICD dwell (terminal entry-exit), Oct24/Feb22 samples",
+      "reject_reason": "dwell != waiting-before-berth; outside window; container-only"
+    }
+  ],
+  "recommended_next_sources": [
+    "data.gov.in API key (free registration) for yearly PBDT validation set",
+    "IPA compilation of monthly port performance returns (if obtainable via RTI/port liaison) for other major ports x 2021-2023",
+    "Vessel-level AIS port-call events (commercial or DGS data-sharing) for true arrival->berth distributions"
+  ]
+}

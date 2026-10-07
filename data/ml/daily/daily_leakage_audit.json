@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "sst_lag1": true,
+    "rolling_past_only": true,
+    "cmems_lag_month": true,
+    "normalization_train_only": true,
+    "targets_all_null_honest": true,
+    "no_fitted_preprocessing": true
+  },
+  "TEMPORAL_LEAKAGE": "PASS",
+  "TARGET_LEAKAGE": "PASS (no targets, no target-derived features)",
+  "env_join": "NOAA daily contemporaneous-day cell (same-day obs, legitimate X(t)); CMEMS lag-1-month (past only)"
+}

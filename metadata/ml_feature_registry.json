@@ -1,0 +1,1317 @@
+{
+  "features": {
+    "year": {
+      "feature_name": "year",
+      "source": "time",
+      "definition": "calendar year",
+      "data_type": "int",
+      "unit": "-",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "year"
+    },
+    "month_number": {
+      "feature_name": "month_number",
+      "source": "time",
+      "definition": "cyclical/calendar encoding",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "seasonality encoding"
+    },
+    "quarter": {
+      "feature_name": "quarter",
+      "source": "time",
+      "definition": "cyclical/calendar encoding",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "seasonality encoding"
+    },
+    "sin_month": {
+      "feature_name": "sin_month",
+      "source": "time",
+      "definition": "cyclical/calendar encoding",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "cyclical",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "seasonality encoding"
+    },
+    "cos_month": {
+      "feature_name": "cos_month",
+      "source": "time",
+      "definition": "cyclical/calendar encoding",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "cyclical",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "seasonality encoding"
+    },
+    "port_lat": {
+      "feature_name": "port_lat",
+      "source": "WPI india_ports",
+      "definition": "static port_lat",
+      "data_type": "float",
+      "unit": "deg",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "port static"
+    },
+    "port_lon": {
+      "feature_name": "port_lon",
+      "source": "WPI india_ports",
+      "definition": "static port_lon",
+      "data_type": "float",
+      "unit": "deg",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "port static"
+    },
+    "port_tide_range": {
+      "feature_name": "port_tide_range",
+      "source": "WPI india_ports",
+      "definition": "static port_tide_range",
+      "data_type": "float",
+      "unit": "m",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "port static"
+    },
+    "port_harbor_size": {
+      "feature_name": "port_harbor_size",
+      "source": "WPI",
+      "definition": "categorical port_harbor_size",
+      "data_type": "category",
+      "unit": "-",
+      "transformation": "one-hot in pipeline",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "harbor chars"
+    },
+    "port_harbor_type": {
+      "feature_name": "port_harbor_type",
+      "source": "WPI",
+      "definition": "categorical port_harbor_type",
+      "data_type": "category",
+      "unit": "-",
+      "transformation": "one-hot in pipeline",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "harbor chars"
+    },
+    "port_shelter": {
+      "feature_name": "port_shelter",
+      "source": "WPI",
+      "definition": "categorical port_shelter",
+      "data_type": "category",
+      "unit": "-",
+      "transformation": "one-hot in pipeline",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "harbor chars"
+    },
+    "port_max_vessel": {
+      "feature_name": "port_max_vessel",
+      "source": "WPI",
+      "definition": "categorical port_max_vessel",
+      "data_type": "category",
+      "unit": "-",
+      "transformation": "one-hot in pipeline",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "harbor chars"
+    },
+    "vessel_activity_count": {
+      "feature_name": "vessel_activity_count",
+      "source": "GFW 4Wings aggregates",
+      "definition": "vessel_activity_count",
+      "data_type": "float",
+      "unit": "count/hours/km",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month predictors, standard for contemporaneous regression; documented)",
+      "description": "vessel activity"
+    },
+    "vessel_presence_hours": {
+      "feature_name": "vessel_presence_hours",
+      "source": "GFW 4Wings aggregates",
+      "definition": "vessel_presence_hours",
+      "data_type": "float",
+      "unit": "count/hours/km",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month predictors, standard for contemporaneous regression; documented)",
+      "description": "vessel activity"
+    },
+    "vessel_count_sum": {
+      "feature_name": "vessel_count_sum",
+      "source": "GFW 4Wings aggregates",
+      "definition": "vessel_count_sum (APPROXIMATE identities, may double-count)",
+      "data_type": "float",
+      "unit": "count/hours/km",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month predictors, standard for contemporaneous regression; documented)",
+      "description": "vessel activity"
+    },
+    "mean_distance_km": {
+      "feature_name": "mean_distance_km",
+      "source": "GFW 4Wings aggregates",
+      "definition": "mean_distance_km",
+      "data_type": "float",
+      "unit": "count/hours/km",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month predictors, standard for contemporaneous regression; documented)",
+      "description": "vessel activity"
+    },
+    "n_flags": {
+      "feature_name": "n_flags",
+      "source": "GFW 4Wings aggregates",
+      "definition": "n_flags",
+      "data_type": "float",
+      "unit": "count/hours/km",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month predictors, standard for contemporaneous regression; documented)",
+      "description": "vessel activity"
+    },
+    "sst_monthly_mean": {
+      "feature_name": "sst_monthly_mean",
+      "source": "NOAA/CMEMS",
+      "definition": "sst_monthly_mean",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "sst_monthly_mean_anom": {
+      "feature_name": "sst_monthly_mean_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(sst_monthly_mean-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "cmems_thetao": {
+      "feature_name": "cmems_thetao",
+      "source": "NOAA/CMEMS",
+      "definition": "cmems_thetao",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "cmems_thetao_anom": {
+      "feature_name": "cmems_thetao_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(cmems_thetao-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "cmems_so": {
+      "feature_name": "cmems_so",
+      "source": "NOAA/CMEMS",
+      "definition": "cmems_so",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "cmems_so_anom": {
+      "feature_name": "cmems_so_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(cmems_so-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "cmems_uo": {
+      "feature_name": "cmems_uo",
+      "source": "NOAA/CMEMS",
+      "definition": "cmems_uo",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "cmems_uo_anom": {
+      "feature_name": "cmems_uo_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(cmems_uo-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "cmems_vo": {
+      "feature_name": "cmems_vo",
+      "source": "NOAA/CMEMS",
+      "definition": "cmems_vo",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "cmems_vo_anom": {
+      "feature_name": "cmems_vo_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(cmems_vo-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "current_magnitude": {
+      "feature_name": "current_magnitude",
+      "source": "NOAA/CMEMS",
+      "definition": "current_magnitude",
+      "data_type": "float",
+      "unit": "degC/psu/m/s",
+      "transformation": "none",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "env monthly"
+    },
+    "current_magnitude_anom": {
+      "feature_name": "current_magnitude_anom",
+      "source": "NOAA/CMEMS",
+      "definition": "(current_magnitude-train_mean)/train_std; train=2021-2022 only",
+      "data_type": "float",
+      "unit": "z",
+      "transformation": "train-only standardization",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (train stats only)",
+      "description": "env anomaly"
+    },
+    "vessel_presence_hours_lag1": {
+      "feature_name": "vessel_presence_hours_lag1",
+      "source": "vessel_presence_hours",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_presence_hours_lag2": {
+      "feature_name": "vessel_presence_hours_lag2",
+      "source": "vessel_presence_hours",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_presence_hours_lag3": {
+      "feature_name": "vessel_presence_hours_lag3",
+      "source": "vessel_presence_hours",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_presence_hours_roll3m": {
+      "feature_name": "vessel_presence_hours_roll3m",
+      "source": "vessel_presence_hours",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_presence_hours_roll3m_std": {
+      "feature_name": "vessel_presence_hours_roll3m_std",
+      "source": "vessel_presence_hours",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_presence_hours_roll6m": {
+      "feature_name": "vessel_presence_hours_roll6m",
+      "source": "vessel_presence_hours",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_activity_count_lag1": {
+      "feature_name": "vessel_activity_count_lag1",
+      "source": "vessel_activity_count",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_activity_count_lag2": {
+      "feature_name": "vessel_activity_count_lag2",
+      "source": "vessel_activity_count",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_activity_count_lag3": {
+      "feature_name": "vessel_activity_count_lag3",
+      "source": "vessel_activity_count",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_activity_count_roll3m": {
+      "feature_name": "vessel_activity_count_roll3m",
+      "source": "vessel_activity_count",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_activity_count_roll3m_std": {
+      "feature_name": "vessel_activity_count_roll3m_std",
+      "source": "vessel_activity_count",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_activity_count_roll6m": {
+      "feature_name": "vessel_activity_count_roll6m",
+      "source": "vessel_activity_count",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_count_sum_lag1": {
+      "feature_name": "vessel_count_sum_lag1",
+      "source": "vessel_count_sum",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_count_sum_lag2": {
+      "feature_name": "vessel_count_sum_lag2",
+      "source": "vessel_count_sum",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_count_sum_lag3": {
+      "feature_name": "vessel_count_sum_lag3",
+      "source": "vessel_count_sum",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "vessel_count_sum_roll3m": {
+      "feature_name": "vessel_count_sum_roll3m",
+      "source": "vessel_count_sum",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_count_sum_roll3m_std": {
+      "feature_name": "vessel_count_sum_roll3m_std",
+      "source": "vessel_count_sum",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "vessel_count_sum_roll6m": {
+      "feature_name": "vessel_count_sum_roll6m",
+      "source": "vessel_count_sum",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "traffic_index_lag1": {
+      "feature_name": "traffic_index_lag1",
+      "source": "traffic_index",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "congestion",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "traffic_index_lag2": {
+      "feature_name": "traffic_index_lag2",
+      "source": "traffic_index",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "congestion",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "traffic_index_lag3": {
+      "feature_name": "traffic_index_lag3",
+      "source": "traffic_index",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "congestion",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "traffic_index_roll3m": {
+      "feature_name": "traffic_index_roll3m",
+      "source": "traffic_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "traffic_index_roll3m_std": {
+      "feature_name": "traffic_index_roll3m_std",
+      "source": "traffic_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "traffic_index_roll6m": {
+      "feature_name": "traffic_index_roll6m",
+      "source": "traffic_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "congestion_index_lag1": {
+      "feature_name": "congestion_index_lag1",
+      "source": "congestion_index",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "traffic"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "congestion_index_lag2": {
+      "feature_name": "congestion_index_lag2",
+      "source": "congestion_index",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "traffic"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "congestion_index_lag3": {
+      "feature_name": "congestion_index_lag3",
+      "source": "congestion_index",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "traffic"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "congestion_index_roll3m": {
+      "feature_name": "congestion_index_roll3m",
+      "source": "congestion_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "congestion_index_roll3m_std": {
+      "feature_name": "congestion_index_roll3m_std",
+      "source": "congestion_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "congestion_index_roll6m": {
+      "feature_name": "congestion_index_roll6m",
+      "source": "congestion_index",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "sst_monthly_mean_lag1": {
+      "feature_name": "sst_monthly_mean_lag1",
+      "source": "sst_monthly_mean",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "sst_monthly_mean_lag2": {
+      "feature_name": "sst_monthly_mean_lag2",
+      "source": "sst_monthly_mean",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "sst_monthly_mean_lag3": {
+      "feature_name": "sst_monthly_mean_lag3",
+      "source": "sst_monthly_mean",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "sst_monthly_mean_roll3m": {
+      "feature_name": "sst_monthly_mean_roll3m",
+      "source": "sst_monthly_mean",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "sst_monthly_mean_roll3m_std": {
+      "feature_name": "sst_monthly_mean_roll3m_std",
+      "source": "sst_monthly_mean",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "sst_monthly_mean_roll6m": {
+      "feature_name": "sst_monthly_mean_roll6m",
+      "source": "sst_monthly_mean",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "current_magnitude_lag1": {
+      "feature_name": "current_magnitude_lag1",
+      "source": "current_magnitude",
+      "definition": "value at t-1",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1) per port",
+      "lag": 1,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "current_magnitude_lag2": {
+      "feature_name": "current_magnitude_lag2",
+      "source": "current_magnitude",
+      "definition": "value at t-2",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(2) per port",
+      "lag": 2,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "current_magnitude_lag3": {
+      "feature_name": "current_magnitude_lag3",
+      "source": "current_magnitude",
+      "definition": "value at t-3",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(3) per port",
+      "lag": 3,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (past only); note lagged own-target excluded from same-target features at modeling",
+      "description": "lag"
+    },
+    "current_magnitude_roll3m": {
+      "feature_name": "current_magnitude_roll3m",
+      "source": "current_magnitude",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "current_magnitude_roll3m_std": {
+      "feature_name": "current_magnitude_roll3m_std",
+      "source": "current_magnitude",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 3,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "current_magnitude_roll6m": {
+      "feature_name": "current_magnitude_roll6m",
+      "source": "current_magnitude",
+      "definition": "past-only rolling (t-1..t-k)",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "shift(1).rolling",
+      "lag": 1,
+      "rolling_window": 6,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none (excludes t)",
+      "description": "rolling"
+    },
+    "va_x_sst": {
+      "feature_name": "va_x_sst",
+      "source": "product of same-month predictors",
+      "definition": "va_x_sst",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "multiply",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month, documented)",
+      "description": "interaction"
+    },
+    "va_x_current": {
+      "feature_name": "va_x_current",
+      "source": "product of same-month predictors",
+      "definition": "va_x_current",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "multiply",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month, documented)",
+      "description": "interaction"
+    },
+    "va_x_sal": {
+      "feature_name": "va_x_sal",
+      "source": "product of same-month predictors",
+      "definition": "va_x_sal",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "multiply",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month, documented)",
+      "description": "interaction"
+    },
+    "sst_x_current": {
+      "feature_name": "sst_x_current",
+      "source": "product of same-month predictors",
+      "definition": "sst_x_current",
+      "data_type": "float",
+      "unit": "-",
+      "transformation": "multiply",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "low (same-month, documented)",
+      "description": "interaction"
+    },
+    "latitude": {
+      "feature_name": "latitude",
+      "source": "NOAA grid",
+      "definition": "latitude",
+      "data_type": "float64",
+      "unit": "-",
+      "transformation": "none (passthrough)",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "passthrough predictor"
+    },
+    "longitude": {
+      "feature_name": "longitude",
+      "source": "NOAA grid",
+      "definition": "longitude",
+      "data_type": "float64",
+      "unit": "-",
+      "transformation": "none (passthrough)",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "passthrough predictor"
+    },
+    "in_india_mask": {
+      "feature_name": "in_india_mask",
+      "source": "EEZ mask",
+      "definition": "in_india_mask",
+      "data_type": "bool",
+      "unit": "-",
+      "transformation": "none (passthrough)",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "passthrough predictor"
+    },
+    "env_grid_lat": {
+      "feature_name": "env_grid_lat",
+      "source": "env join",
+      "definition": "env_grid_lat",
+      "data_type": "float64",
+      "unit": "-",
+      "transformation": "none (passthrough)",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "passthrough predictor"
+    },
+    "env_grid_lon": {
+      "feature_name": "env_grid_lon",
+      "source": "env join",
+      "definition": "env_grid_lon",
+      "data_type": "float64",
+      "unit": "-",
+      "transformation": "none (passthrough)",
+      "lag": 0,
+      "rolling_window": null,
+      "allowed_targets": [
+        "traffic",
+        "congestion"
+      ],
+      "leakage_risk": "none",
+      "description": "passthrough predictor"
+    }
+  },
+  "anomaly_train_stats": {
+    "sst_monthly_mean": {
+      "mean": 21.658058636695785,
+      "std": 4.320491792836059
+    },
+    "cmems_thetao": {
+      "mean": 28.410117164518876,
+      "std": 2.185216278904422
+    },
+    "cmems_so": {
+      "mean": 32.297637483106094,
+      "std": 4.211278607190059
+    },
+    "cmems_uo": {
+      "mean": 0.014828943507681897,
+      "std": 0.08353513333184934
+    },
+    "cmems_vo": {
+      "mean": -0.03328542082613989,
+      "std": 0.12801882266184536
+    },
+    "current_magnitude": {
+      "mean": 0.11083679867900259,
+      "std": 0.11134738266321731
+    }
+  },
+  "train_period_for_stats": "2021-01..2022-12",
+  "target_columns_excluded": [
+    "traffic_index",
+    "traffic_target",
+    "congestion_index",
+    "waiting_time_mean_hours"
+  ]
+}

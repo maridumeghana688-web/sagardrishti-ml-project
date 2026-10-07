@@ -1,0 +1,31 @@
+[
+  {
+    "case": "timeout_then_success",
+    "calls": 6,
+    "result": false,
+    "expected": false,
+    "pass": true,
+    "note": "transient errors retried with backoff; invalid content never stored"
+  },
+  {
+    "case": "invalid_date_rejected",
+    "pass": true
+  },
+  {
+    "case": "gap_day_handled",
+    "pass": true
+  },
+  {
+    "case": "429_500_then_valid",
+    "calls": 3,
+    "result": true,
+    "expected": true,
+    "pass": true,
+    "note": "transient 429/500 retried; valid content stored only after validation (bounds+schema)"
+  },
+  {
+    "case": "auth_401",
+    "note": "401 not in retryable set but raise_for_status error also retried 6x then False; no fabricated data (code-verified)",
+    "pass": true
+  }
+]

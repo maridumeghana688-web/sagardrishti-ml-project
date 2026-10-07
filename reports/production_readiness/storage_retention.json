@@ -1,0 +1,12 @@
+{
+  "raw_GB": 5.99,
+  "processed_GB": 0.43,
+  "ml_GB": 1.093,
+  "predictions_GB": 0.001,
+  "logs_reports_GB": 0.001,
+  "total_GB": 7.51,
+  "limit_GB": 10,
+  "growth_per_day_MB": 0.13,
+  "growth_per_year_GB": 0.05,
+  "retention": "keep all validated history; predictions append-only deduped by target_date; prune tmp/probe files only"
+}

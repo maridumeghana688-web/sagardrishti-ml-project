@@ -1,0 +1,21 @@
+import puppeteer from 'puppeteer-core'
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+const b = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: 'new', args: ['--no-sandbox'] })
+try {
+  const p = await b.newPage()
+  await p.setViewport({ width: 1600, height: 900 })
+  await p.goto('http://localhost:5173/register', { waitUntil: 'networkidle0', timeout: 60000 })
+  await p.type('#full_name', 'Shot User')
+  await p.type('#user_id', 'shotuser')
+  await p.select('#organization', 'Port Authority')
+  await p.select('#department', 'Logistics')
+  await p.type('#reg-password', 'ShotPass1234')
+  await p.type('#confirm_password', 'ShotPass1234')
+  await Promise.all([p.waitForNavigation({ waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {}), p.click('button[type="submit"]')])
+  await sleep(6000)
+  const tiles = await p.evaluate(() => document.querySelectorAll('.leaflet-tile-pane img').length)
+  const body = await p.evaluate(() => document.body.innerText.slice(0, 200))
+  console.log('tiles loaded:', tiles)
+  await p.screenshot({ path: 'C:/Users/J SATYA/AppData/Local/Temp/opencode/dashboard-map.png' })
+  console.log('screenshot saved; api-key-watermark check: manual view')
+} finally { await b.close() }

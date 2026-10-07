@@ -1,0 +1,92 @@
+[
+  {
+    "port": 48613,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 622.76,
+    "traffic_actual": 622.0,
+    "traffic_error": 0.76,
+    "congestion_prediction": -0.13,
+    "congestion_actual": -0.1717,
+    "congestion_error": 0.0417
+  },
+  {
+    "port": 48615,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 1232.85,
+    "traffic_actual": 1246.0,
+    "traffic_error": -13.15,
+    "congestion_prediction": 0.9031,
+    "congestion_actual": 1.0197,
+    "congestion_error": -0.1166
+  },
+  {
+    "port": 48617,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 1426.03,
+    "traffic_actual": 1453.0,
+    "traffic_error": -26.97,
+    "congestion_prediction": 0.9087,
+    "congestion_actual": 0.9462,
+    "congestion_error": -0.0375
+  },
+  {
+    "port": 48620,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 62.24,
+    "traffic_actual": 66.0,
+    "traffic_error": -3.76,
+    "congestion_prediction": -0.4676,
+    "congestion_actual": -0.4503,
+    "congestion_error": -0.0173
+  },
+  {
+    "port": 48630,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 1234.58,
+    "traffic_actual": 1244.0,
+    "traffic_error": -9.42,
+    "congestion_prediction": 0.9038,
+    "congestion_actual": 0.7683,
+    "congestion_error": 0.1355
+  },
+  {
+    "port": 48635,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 162.04,
+    "traffic_actual": 165.0,
+    "traffic_error": -2.96,
+    "congestion_prediction": -0.5795,
+    "congestion_actual": -0.6002,
+    "congestion_error": 0.0207
+  },
+  {
+    "port": 48650,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 515.7,
+    "traffic_actual": 509.0,
+    "traffic_error": 6.7,
+    "congestion_prediction": -0.1706,
+    "congestion_actual": -0.1765,
+    "congestion_error": 0.0059
+  },
+  {
+    "port": 48670,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 428.49,
+    "traffic_actual": 458.0,
+    "traffic_error": -29.51,
+    "congestion_prediction": 0.8424,
+    "congestion_actual": 0.9201,
+    "congestion_error": -0.0777
+  },
+  {
+    "port": 48674,
+    "prediction_date": "2024-03-15",
+    "traffic_prediction": 601.32,
+    "traffic_actual": 639.0,
+    "traffic_error": -37.68,
+    "congestion_prediction": -0.1562,
+    "congestion_actual": -0.0107,
+    "congestion_error": -0.1454
+  }
+]

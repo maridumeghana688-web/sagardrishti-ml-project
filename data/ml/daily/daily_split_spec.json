@@ -1,0 +1,30 @@
+{
+  "train_start": "2021-01-01",
+  "train_end": "2022-12-31",
+  "train_n": 32076,
+  "validation_start": "2023-01-01",
+  "validation_end": "2023-06-30",
+  "validation_n": 7964,
+  "test_start": "2023-07-01",
+  "test_end": "2023-12-31",
+  "test_n": 8096,
+  "method": "temporal, no shuffle",
+  "expanding_backtest": [
+    {
+      "fold": 1,
+      "train": "2021",
+      "validate": "2022-H1"
+    },
+    {
+      "fold": 2,
+      "train": "2021..2022-H1",
+      "validate": "2022-H2"
+    },
+    {
+      "fold": 3,
+      "train": "2021..2022",
+      "validate": "2023-H1"
+    }
+  ],
+  "status": "defined; supervised training BLOCKED (no genuine daily targets)"
+}

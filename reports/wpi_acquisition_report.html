@@ -1,0 +1,79 @@
+<html><body><h1>WPI acquisition report</h1><pre>{
+  "source": "NGA World Port Index Pub 150",
+  "access_method": "Esri-hosted WPI FeatureServer query where=COUNTRY='IN' (India-constrained, 44 records, ~tens of KB); official NGA page https://msi.nga.mil/Publications/WPI returned 503 (Akamai/bot-mitigation) on direct fetch 2026-09-28",
+  "version_date": "dataLastEditDate 2018-06-27T07:34:51 (stale snapshot; documented limitation)",
+  "original_row_count": 44,
+  "india_row_count_query": 44,
+  "invalid_coordinate_count": 0,
+  "duplicate_port_id_count": 0,
+  "duplicate_name_coord_count": 0,
+  "geometry_mismatch_count": 0,
+  "final_port_count": 44,
+  "un_locode_available": false,
+  "provenance": "serviceItemId 8be585162b814e1f89afa6a3de4e42cb, layer 'Ports of the World (WPI)'; raw saved at data/work_wpi/wpi_india_raw_arcgis.json; NGA viewer docs confirm official CSV/JSON/SHP/GPKG/FGDB outputs",
+  "acquisition_method": "server-side COUNTRY='IN' filter + pagination (India-only, no global download); normalized to data/reference/india_ports.parquet/csv",
+  "fields_preserved": [
+    "port_id(INDEX_NO)",
+    "port_name",
+    "country",
+    "latitude",
+    "longitude",
+    "wpi_region_no",
+    "harbor_size",
+    "harbor_type",
+    "shelter",
+    "chart_ref",
+    "pub_ref",
+    "max_vessel",
+    "tide_range"
+  ],
+  "limitation": "2018 snapshot predates 2019 27th edition PDF and current viewer DB; UN/LOCODE not in this schema; coordinates validated but not independently hydrographically verified; WPI is a PORT REFERENCE, not traffic measurements",
+  "outputs": [
+    "data/reference/india_ports.parquet",
+    "data/reference/india_ports.csv"
+  ]
+}</pre><h2>Ports</h2><pre>    port_id                            port_name   latitude  longitude harbor_size
+0     48613                                SIKKA  22.433333  69.833333           V
+1     48615                     VADINAR TERMINAL  22.516667  69.700000           V
+2     48617                               MUNDRA  22.733333  69.700000           S
+3     48620                               MANDVI  22.833333  69.350000           V
+4     48630                               KANDLA  23.033333  70.216667           S
+5     48635                             NAVLAKHI  22.950000  70.450000           V
+6     48650                                 BEDI  22.516667  70.033333           V
+7     48670                                 OKHA  22.466667  69.083333           V
+8     48674                                DAHEJ  21.700000  72.533333           V
+9     48680                            PORBANDAR  21.633333  69.600000           V
+10    48690                              VERAVAL  20.900000  70.366667           V
+11    48730                       PIPAVAV BANDAR  20.916667  71.516667           S
+12    48760                            BHAVNAGAR  21.766667  72.233333           S
+13    48770                             MAGDALLA  21.150000  72.750000           V
+14    48790                               HAZIRA  21.083333  72.633333           S
+15    48840                      MUMBAI (BOMBAY)  18.966667  72.866667           L
+16    48845  JAWAHARLAL NEHRU PORT (NHAVA SHIVA)  18.950000  72.950000           M
+17    48900                            RATNAGIRI  16.983333  73.283333           V
+18    48960                               PANAJI  15.500000  73.816667           V
+19    48970                             MARMAGAO  15.433333  73.800000           S
+20    48990                               KARWAR  14.816667  74.116667           V
+21    49000                             BELEKERI  14.700000  74.266667           V
+22    49030                        NEW MANGALORE  12.916667  74.816667           M
+23    49040                   AZHIKAL (AZHIKKAL)  11.916667  75.300000           V
+24    49100                  CALICUT (KOZHIKODE)  11.250000  75.766667           V
+25    49110                              BEYPORE  11.166667  75.800000           V
+26    49130                       KOCHI (COCHIN)   9.966667  76.233333           M
+27    49160                      QUILON (KOLLAM)   8.883333  76.583333           V
+28    49170                           TRIVANDRUM   8.483333  76.950000           V
+29    49180                             KOLACHEL   8.166667  77.250000           V
+30    49320                            TUTICORIN   8.800000  78.166667           S
+31    49350                        NAGAPPATTINAM  10.766667  79.850000           S
+32    49370                        KARAIKAL PORT  10.833333  79.866667           S
+33    49410                            CUDDALORE  11.716667  79.766667           V
+34    49430                          PONDICHERRY  11.933333  79.833333           V
+35    49450                     CHENNAI (MADRAS)  13.100000  80.300000           L
+36    49454                       KAMARAJAR PORT  13.266667  80.316667           S
+37    49460                        MACHILIPATNAM  16.150000  81.166667           V
+38    49470                         KAKINADA BAY  17.000000  82.316667           V
+39    49480                       VISHAKHAPATNAM  17.683333  83.300000           M
+40    49535                              PARADIP  20.266667  86.683333           S
+41    49555                          HALDIA PORT  22.016667  88.083333           V
+42    49560                             CALCUTTA  22.550000  88.333333           L
+43    49720                           PORT BLAIR  11.683333  92.750000           S</pre></body></html>

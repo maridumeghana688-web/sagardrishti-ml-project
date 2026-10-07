@@ -1,0 +1,37 @@
+{
+  "GFW": {
+    "latest": "2026-08-31",
+    "frequency": "daily (near-real-time, ~days latency)",
+    "variables": "presence_hours/activity/vessel ids per cell-flag-day",
+    "endpoint": "POST /v3/4wings/report (public-global-presence:latest)",
+    "status": "CURRENT (as of 2026-09-30 fetch)",
+    "delay": "days",
+    "on_failure": "retry 6x exp backoff; partition left incomplete, never zero-filled as current"
+  },
+  "NOAA": {
+    "latest": "2023-12-31",
+    "frequency": "daily (TERMINATED CDR)",
+    "variables": "sea_surface_temperature",
+    "endpoint": "ERDDAP nceiPH53sstd1day",
+    "status": "STALE/HISTORICAL (product ended; NOT a current source)",
+    "delay": "N/A",
+    "on_failure": "documented missing; train-median imputation"
+  },
+  "CMEMS": {
+    "latest": "2026-05 monthly mean",
+    "frequency": "monthly",
+    "variables": "thetao/so/uo/vo (lag-1-month features)",
+    "endpoint": "copernicusmarine subset",
+    "status": "CURRENT (monthly cadence)",
+    "delay": "~weeks",
+    "on_failure": "retry 5x; month left missing"
+  },
+  "WPI": {
+    "latest": "2018 snapshot",
+    "frequency": "static",
+    "variables": "44 port refs",
+    "status": "STATIC REFERENCE",
+    "delay": "N/A",
+    "on_failure": "N/A"
+  }
+}

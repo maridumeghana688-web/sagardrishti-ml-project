@@ -1,0 +1,62 @@
+{
+  "preflight": {
+    "kaggle": {
+      "status": "PASS",
+      "auth": "SUCCESS",
+      "user": "jsatya07",
+      "method": "scripts/kaggle_pipeline.py verify (env credentials)"
+    },
+    "gfw": {
+      "status": "PASS",
+      "auth": "SUCCESS",
+      "endpoint": "POST /v3/4wings/report verified (HTTP 200)",
+      "4wings": "reachable",
+      "dataset": "public-global-presence:latest (resolved v4.0)",
+      "india_test": "431 rows, schema {date,flag,hours,lat,lon,vesselIDs}, coords in-box",
+      "mask": "431/431 inside EEZ+150nm mask",
+      "method": "official v3 docs + 3-day LOW/FLAG/ENTIRE probe, 2x2deg box off Kochi",
+      "estimate_monthly_full_bbox_csv_gb": 0.07,
+      "estimate_2021_2023_gb": 2.5
+    },
+    "noaa": {
+      "status": "PASS",
+      "dataset": "nceiPH53sstd1day",
+      "title": "AVHRR Pathfinder v5.3 L3C SST, 0.0417deg daily daytime",
+      "coverage": "1981-08-25 -> 2023-12-31",
+      "variable": "sea_surface_temperature",
+      "india_test": "HTTP 200, 12410 rows, schema {time,latitude,longitude,sea_surface_temperature}",
+      "mask": "4788/12096 inside EEZ+150nm mask (fraction 0.396)",
+      "deprecated_rejected": "erdMH1sstd8day (2003-2019); successor R20190 covers 2019 only",
+      "wind": "deferred: CoastWatch FNMOC wind is monthly (too coarse); use Copernicus/ERA5 extension",
+      "estimate_daily_fullres_india_mb": 1.2,
+      "estimate_2021_2023_gb": 1.3
+    },
+    "copernicus": {
+      "status": "PASS",
+      "auth": "SUCCESS",
+      "toolbox": "copernicusmarine 2.4.1",
+      "product": "GLOBAL_MULTIYEAR_PHY_001_030",
+      "dataset": "cmems_mod_glo_phy_my_0.083deg_P1D-m",
+      "version": "202311 (released 2023-11-30, retired: none)",
+      "variables": "thetao, so, uo, vo",
+      "dry_run": "3-day India subset valid, 174.04 MB full-depth, nothing downloaded",
+      "record": "metadata/source_manifest.json"
+    },
+    "wpi": {
+      "status": "MISSING",
+      "detail": "data/raw/ holds only .gitkeep; port stage STOPs alone",
+      "action": "stage current NGA WPI CSV into data/raw/; never invent coordinates"
+    },
+    "storage": {
+      "status": "CONDITIONAL",
+      "budget_gb": 10.0,
+      "gfw_gb": 2.5,
+      "noaa_gb": 1.3,
+      "copernicus_gb": 2.1,
+      "copernicus_condition": "surface levels + monthly means (full-depth daily ~= 63GB: DO NOT DOWNLOAD)",
+      "combined_gb": 5.9,
+      "common_period": "2021-2023 reanalysis-grade; 2024 needs forecast products",
+      "rule": "fails closed: any estimate over budget stops its stage"
+    }
+  }
+}

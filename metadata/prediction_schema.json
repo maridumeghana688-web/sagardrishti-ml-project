@@ -1,0 +1,20 @@
+{
+  "prediction_id": "string (port_id + target_date)",
+  "port_id": "int",
+  "port_name": "string",
+  "latitude": "float",
+  "longitude": "float",
+  "prediction_date": "YYYY-MM-DD (feature date)",
+  "generated_at": "timestamp",
+  "traffic_prediction": "float",
+  "traffic_lower_bound": "float",
+  "traffic_upper_bound": "float",
+  "congestion_prediction": "float",
+  "congestion_lower_bound": "float",
+  "congestion_upper_bound": "float",
+  "traffic_model_version": "daily_traffic_model_v1",
+  "congestion_model_version": "daily_congestion_model_v1",
+  "source_status": "object",
+  "data_freshness": "FRESH|STALE|MISSING|UNAVAILABLE",
+  "prediction_status": "OK|UNAVAILABLE"
+}

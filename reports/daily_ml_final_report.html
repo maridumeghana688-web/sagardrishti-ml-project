@@ -1,0 +1,85 @@
+<html><body><h1>Daily ML final report</h1><pre>{
+  "total_daily_rows": 48136,
+  "ports_represented": 44,
+  "date_coverage": [
+    "2021-01-01 00:00:00+00:00",
+    "2023-12-31 00:00:00+00:00"
+  ],
+  "days_present": 1094,
+  "days_expected": 1095,
+  "target_definitions": {
+    "traffic": "next_day_presence_hours (t+1) - UNSUPPORTED: monthly GFW cannot yield daily labels",
+    "congestion": "gfw_derived_daily_congestion_proxy (t+1) - UNSUPPORTED for same reason"
+  },
+  "feature_count": 59,
+  "splits": {
+    "train_start": "2021-01-01",
+    "train_end": "2022-12-31",
+    "train_n": 32076,
+    "validation_start": "2023-01-01",
+    "validation_end": "2023-06-30",
+    "validation_n": 7964,
+    "test_start": "2023-07-01",
+    "test_end": "2023-12-31",
+    "test_n": 8096,
+    "method": "temporal, no shuffle",
+    "expanding_backtest": [
+      {
+        "fold": 1,
+        "train": "2021",
+        "validate": "2022-H1"
+      },
+      {
+        "fold": 2,
+        "train": "2021..2022-H1",
+        "validate": "2022-H2"
+      },
+      {
+        "fold": 3,
+        "train": "2021..2022",
+        "validate": "2023-H1"
+      }
+    ],
+    "status": "defined; supervised training BLOCKED (no genuine daily targets)"
+  },
+  "baseline_results": "NOT TRAINED (no genuine daily targets; training would be fabrication)",
+  "strong_model_results": "NOT TRAINED (same reason; XGBoost/LightGBM available but unused honestly)",
+  "selected_models": "none (daily); monthly RF models preserved as baseline",
+  "MAE/RMSE/R2": "N/A daily (no models); monthly test: traffic 2.668/3.773/0.965, congestion 0.0209/0.0340/0.961",
+  "leakage_status": "PASS / PASS (no targets, no target-derived features)",
+  "feature_drift": {
+    "train": 22.603,
+    "test": 20.967
+  },
+  "missingness": {
+    "sst_null_frac": 0.6283,
+    "missing_day": [
+      "2022-07-02 (absent in NOAA file)"
+    ]
+  },
+  "limitations": [
+    "GFW monthly-only -> daily vessel targets unavailable",
+    "SST 63% cloud-gap nulls",
+    "2022-07-02 absent in source",
+    "CMEMS monthly lag-1-month only",
+    "single-port waiting labels not disaggregated"
+  ],
+  "waiting_time_status": "SEPARATE (8 monthly Paradip labels intact; NOT disaggregated)",
+  "scientific_reliability": "daily predictions NOT claimed reliable: no validated daily targets exist",
+  "artifacts": [
+    "data/ml/daily\\daily_leakage_audit.json",
+    "data/ml/daily\\daily_split_spec.json",
+    "data/ml/daily\\daily_stats.json",
+    "data/ml/daily\\daily_target_availability.json",
+    "data/ml/daily\\port_ocean_cell_map.json",
+    "data/ml/daily\\sagardrishti_daily_environment.parquet",
+    "data/ml/daily\\sagardrishti_daily_master_training.parquet",
+    "data/ml/daily\\sagardrishti_daily_port_congestion.parquet",
+    "data/ml/daily\\sagardrishti_daily_port_traffic.parquet",
+    "data/ml/daily\\sagardrishti_daily_vessel_activity.parquet"
+  ],
+  "monthly_models": "models/traffic_model/, models/congestion_model/ untouched",
+  "inference": "src/ml/daily_inference.py predict_next_day_traffic/congestion(port_id, prediction_date)",
+  "monitoring": "reports/daily_model_monitoring/monitoring.json",
+  "recommended_next": "daily-resolution GFW 4Wings pull (new acquisition, ~1095 calls) to enable genuine daily targets"
+}</pre></body></html>

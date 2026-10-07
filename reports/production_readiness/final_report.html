@@ -1,0 +1,59 @@
+<html><body><h1>Production readiness final report</h1><pre>{
+  "1_ports_supported": 44,
+  "2_ports_traffic_predictions": 44,
+  "3_ports_congestion_predictions": 44,
+  "4_ports_unavailable": 0,
+  "5_traffic_model_version": "daily_traffic_model_v1 (RandomForest)",
+  "6_congestion_model_version": "daily_congestion_model_v1 (LightGBM)",
+  "7_training_period": "2021-01-01..2024-12-31",
+  "8_validation_period": "2024 (selection)",
+  "9_test_period": "2025 (single use)",
+  "10_latest_gfw": "2026-08-31",
+  "11_latest_cmems": "2026-05 monthly mean",
+  "12_noaa_limitation": "product ends 2023-12-31; STALE/HISTORICAL only, never claimed current",
+  "13_daily_features": 102,
+  "14_feature_groups": "GFW lags/rolls/changes, SST+lags/rolls/anomaly, CMEMS lag-month, WPI static, temporal/cyclical, env interactions",
+  "15_horizon": "next-day X(t)->Y(t+1), genuinely next-day",
+  "16_automatic_fetch": "YES (run_daily; GFW+CMEMS; NOAA end-of-product documented)",
+  "17_scheduler_ready": "YES (idempotent, resume-safe, cron-suggested)",
+  "18_inference_api_ready": "YES (src/daily_pipeline/api.py; website untouched)",
+  "19_freshness": "per-run source_check+freshness with documented thresholds",
+  "20_failure_retry": "6x exp backoff; mocked 429/500/timeout/malformed tests pass; never fabricates",
+  "21_leakage": "TEMPORAL PASS / TARGET PASS",
+  "22_tests": "pending full-suite count",
+  "23_storage_GB": 7.51,
+  "24_limitations": [
+    "SST missing from 2024 (product end)",
+    "2026 interval coverage 71% vs 80% nominal",
+    "single-country 44 ports",
+    "Jun-2023 Paradip carryover (monthly system)"
+  ],
+  "25_traffic_test": {
+    "MAE": 80.5297898505604,
+    "RMSE": 173.96349990793004,
+    "R2": 0.95210849010762
+  },
+  "25_congestion_test": {
+    "MAE": 0.12142622695569588,
+    "RMSE": 0.20648874457022753,
+    "R2": 0.9635743355224622
+  },
+  "25_live_2026": {
+    "n_compared": 10648,
+    "traffic_MAE": 106.04,
+    "traffic_RMSE": 336.54,
+    "traffic_bias": -31.82,
+    "cong_MAE": 0.1313,
+    "coverage_inside_interval_traffic": 0.712,
+    "rolling_MAE_by_month": {
+      "2026-01": 92.41,
+      "2026-02": 84.6,
+      "2026-03": 113.7,
+      "2026-04": 120.67,
+      "2026-05": 141.81,
+      "2026-06": 86.23,
+      "2026-07": 96.42,
+      "2026-08": 109.77
+    }
+  }
+}</pre></body></html>

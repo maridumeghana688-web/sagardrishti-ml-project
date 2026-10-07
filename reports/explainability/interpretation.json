@@ -1,0 +1,6 @@
+{
+  "note": "associational only; never causal",
+  "method": "RF impurity importance + SHAP TreeExplainer on 200-row train sample (test untouched)",
+  "traffic": "lag/rolling vessel-activity history dominates; seasonal (sin/cos) and port static contribute; env anomalies secondary",
+  "congestion": "same pattern; past activity + seasonality lead; env secondary"
+}

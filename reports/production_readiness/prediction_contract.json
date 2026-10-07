@@ -1,0 +1,23 @@
+{
+  "input": {
+    "port_id": "int (WPI)",
+    "prediction_date": "YYYY-MM-DD (target date D; features from D-1)"
+  },
+  "output": [
+    "traffic_prediction",
+    "traffic_lower_bound",
+    "traffic_upper_bound",
+    "congestion_prediction",
+    "congestion_lower_bound",
+    "congestion_upper_bound",
+    "source_status",
+    "data_freshness",
+    "model_version",
+    "prediction_timestamp"
+  ],
+  "unavailable": {
+    "prediction_status": "UNAVAILABLE",
+    "unavailable_reason": "e.g., unknown port, out-of-range date, missing feature date",
+    "rule": "never return fake 0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "env_ignored": true,
+  "bearer_tokens_in_src": 0,
+  "bearer_tokens_in_reports": 0,
+  "credentials_committed": "none (no commits in repo; .env ignored)",
+  "api_keys_printed": "none",
+  "model_artifacts_contain_credentials": false,
+  "frontend_receives_source_creds": false,
+  "note": "grep audits clean; loaders read .env at runtime only"
+}

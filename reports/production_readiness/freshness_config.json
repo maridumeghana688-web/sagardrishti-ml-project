@@ -1,0 +1,17 @@
+{
+  "thresholds": {
+    "FRESH_days": "<=10 (documented: GFW latency is days; 10d allows for weekend/holiday API lag)",
+    "STALE_days": ">45 (documented: beyond CMEMS monthly cadence + GFW latency)",
+    "PARTIAL": "some ports/dates missing",
+    "UNAVAILABLE": "source product ended (NOAA) or fetch failed"
+  },
+  "per_prediction_fields": [
+    "source_last_updated",
+    "source_data_date",
+    "fetch_timestamp",
+    "feature_timestamp",
+    "prediction_timestamp",
+    "data_age_hours",
+    "freshness_status"
+  ]
+}

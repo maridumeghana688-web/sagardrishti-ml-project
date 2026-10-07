@@ -1,0 +1,11 @@
+{
+  "base": "src.daily_pipeline.api (import; no server started, no frontend)",
+  "endpoints": {
+    "GET /health": "api.get_source_status() freshness",
+    "GET /sources/status": "source_check + freshness",
+    "GET /ports": "44 WPI ports",
+    "GET /predictions/{port_id}": "get_daily_predictions_for_port",
+    "GET /predictions?date=": "filter daily_predictions.parquet by target_date"
+  },
+  "credentials": "never exposed (loaders only)"
+}

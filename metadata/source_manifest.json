@@ -1,0 +1,161 @@
+{
+  "copernicus_physics": {
+    "access": "subset (server-side bbox + time + variables)",
+    "arco_updated_date": "2026-07-20T12:30:30.077Z",
+    "attachment_evidence": "Two fresh Kaggle sessions (2026-09-27) report all four secret names MISSING via UserSecretsClient; Kaggle API client exposes no secrets-write methods, so local .env cannot be synced programmatically.",
+    "attribution": "E.U. Copernicus Marine Service",
+    "config": {
+      "daily_resolution": false,
+      "full_depth": false,
+      "monthly_only": true,
+      "surface_only": true
+    },
+    "dataset_id": "cmems_mod_glo_phy_my_0.083deg_P1M-m",
+    "dataset_note": "Prompt section 4 named the P1D-m daily dataset but simultaneously mandated monthly-only; the mandatory restriction and absolute rule 7 govern, so the verified monthly-means dataset stands.",
+    "dataset_version": "202311",
+    "dry_run_india_36mo_mb": 167.08,
+    "dry_run_window": "2021-01..2023-12",
+    "license": "Copernicus Marine Service terms (verify redistribution rights before publishing derivatives)",
+    "product_id": "GLOBAL_MULTIYEAR_PHY_001_030",
+    "product_title": "Global Ocean Physics Reanalysis",
+    "released_date": "2023-11-30T11:00:00.000Z",
+    "resolution_deg": 0.083,
+    "retired_date": null,
+    "source": "Copernicus Marine Data Store (official toolbox subset)",
+    "source_url": "https://marine.copernicus.eu/",
+    "spatial_coverage": "global (-180..180, -80..90); India subset 65-100E, 0-30N",
+    "status": "STOPPED (credential missing in Kaggle Secrets)",
+    "temporal_resolution": "monthly means",
+    "variables": [
+      "thetao",
+      "so",
+      "uo",
+      "vo"
+    ],
+    "verified_at": "2026-09-26"
+  },
+  "gfw_presence": {
+    "attribution": "Global Fishing Watch",
+    "dataset_id": "public-global-presence:latest",
+    "dataset_version": "v4.0 (resolved live)",
+    "endpoint": "POST /v3/4wings/report",
+    "fields": [
+      "date",
+      "flag",
+      "hours",
+      "lat",
+      "lon",
+      "vesselIDs"
+    ],
+    "license": "CC-BY-4.0 (verify current GFW terms before redistribution)",
+    "source": "Global Fishing Watch 4Wings v3 (India bbox polygon subset)",
+    "source_url": "https://globalfishingwatch.org/our-apis/",
+    "status": "STOPPED (credential missing in Kaggle Secrets)",
+    "temporal_bounds": "2021-01..2023-12 (monthly partitions)",
+    "verified_at": "2026-09-26 (431-row India probe, HTTP 200)"
+  },
+  "india_eez": {
+    "buffer": "150 nautical miles seaward (metric-exact via azimuthal projection)",
+    "mrgid": 8480,
+    "pol_type": "200NM",
+    "source": "MarineRegions WFS eez layer, CQL geoname filter (India-only payload)",
+    "source_url": "https://geo.vliz.be/geoserver/MarineRegions/wfs",
+    "sovereign": "India",
+    "status": "OK"
+  },
+  "noaa_sst": {
+    "attribution": "NOAA CoastWatch / NASA GSFC OBPG (AVHRR Pathfinder)",
+    "caveat": "L3C unmasked: quality flags not served; residual cloud cold-bias possible; valid-range QC applied; prefer CMEMS thetao as primary temperature feature",
+    "dataset_id": "nceiPH53sstd1day",
+    "dataset_title": "AVHRR Pathfinder Version 5.3 L3-Collated (L3C) SST, Global, 0.0417deg, 1981-present, Daytime (1 Day Composite)",
+    "deprecated_rejected": "erdMH1sstd8day (2003-2019); successor R20190 covers 2019 only",
+    "license": "public domain (U.S. Government work; verify current CoastWatch terms)",
+    "qc": "dropped sst outside [-1.8, 45]C contract before averaging",
+    "source": "NOAA CoastWatch ERDDAP griddap (server-side India constraints, monthly partitions)",
+    "source_url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/nceiPH53sstd1day",
+    "status": "OK (36/36 monthly partitions)",
+    "temporal_bounds": "2021-01..2023-12",
+    "units": "degree_C",
+    "variable": "sea_surface_temperature",
+    "verified_at": "2026-09-26"
+  },
+  "wpi_ports": {
+    "manual_fallback": "https://msi.nga.mil/Publications/WPI",
+    "reason": "HTTP 503 Akamai bot-mitigation from automation network; from Kaggle egress the page loads but exposes no downloadable file link (JS-driven page)",
+    "source": "NGA World Port Index (official only; no mirrors attempted)",
+    "status": "BLOCKED"
+  },
+  "sagardrishti_final_build_2026_09_28": {
+    "raw_acquired": {
+      "NOAA nceiPH53sstd1day": "data/kaggle_output/noaa 36/36 monthly NetCDF (~4.94GB), India-constrained; IMMUTABLE, not redownloaded",
+      "GFW public-global-presence v4.0": "data/kaggle_output/gfw 36/36 parquet (~45MB, 10.3M rows); IMMUTABLE, not redownloaded",
+      "CMEMS GLOBAL_MULTIYEAR_PHY_001_030 monthly surface": "data/kaggle_output/copernicus 36/36 NC (~176MB, thetao/so/uo/vo); IMMUTABLE, not redownloaded",
+      "India EEZ MRGID 8480 +150nm": "data/kaggle_output/india_mask.geojson; not redownloaded",
+      "WPI NGA Pub150": "data/reference/india_ports.parquet (44 India ports) via Esri WPI FeatureServer COUNTRY='IN'; official NGA page 503-blocked; raw at data/work_wpi/wpi_india_raw_arcgis.json"
+    },
+    "intermediate": {
+      "india_masked/vessel_activity.parquet": "5,887,415 rows GFW India-masked (pre-existing)",
+      "data/derived/port_vessel_activity.parquet": "GFW observed presence + inferred 50km port association (INFERRED association, OBSERVED presence)"
+    },
+    "derived_features": {
+      "environment": "NOAA monthly SST + CMEMS thetao/so/uo/vo + current_magnitude=sqrt(uo^2+vo^2); nearest-neighbor spatial join same-month",
+      "vessel_activity": "normalized GFW presence, 0.25deg bins (OBSERVED)"
+    },
+    "derived_targets": {
+      "port_traffic": "DERIVED monthly aggregates + documented traffic_index=log1p(hours)*log1p(vessel_count_sum)",
+      "congestion": "DERIVED min-max composite 0.5*hours+0.3*count+0.2*activity (not official measurement)"
+    },
+    "inferred_associations": [
+      "port_vessel_activity 50km geofence (configurable, reproducible, documented)"
+    ],
+    "unavailable_targets": {
+      "waiting_time": "NOT DERIVABLE from monthly presence aggregates; needs AIS port-call/anchorage timestamps"
+    },
+    "lineage": [
+      "GFW -> vessel_activity",
+      "GFW + WPI -> port_vessel_activity",
+      "NOAA + CMEMS -> environment",
+      "GFW + WPI -> port_traffic",
+      "GFW + WPI -> congestion",
+      "traffic + congestion + environment + WPI -> master_training"
+    ],
+    "global_data_downloaded": "NO (all acquisitions India-constrained)"
+  },
+  "sagardrishti_waiting_time_2026": {
+    "source": "Paradip Port Authority monthly Performance Parameter PDFs (official port reports, paradipport.org)",
+    "definition": "average pre-berthing waiting time: arrival at anchorage/reporting station to operational berth, excl. inward movement (matches required waiting definition)",
+    "files": [
+      "Perf_Apr23.pdf",
+      "Perf_Aug23.pdf",
+      "Perf_Dec23.pdf",
+      "Perf_Feb24.pdf",
+      "Perf_Jan24.pdf",
+      "Perf_Jul23.pdf",
+      "Perf_Jun23.pdf",
+      "Perf_Mar24.pdf",
+      "Perf_May23.pdf",
+      "Perf_Oct23.pdf",
+      "Perf_Sep23.pdf"
+    ],
+    "in_window_months": [
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-12"
+    ],
+    "missing": [
+      "2023-11 (PDF 404)",
+      "2021-01..2023-03 (archives rotated)",
+      "all non-Paradip ports (no retrievable monthly archives)"
+    ],
+    "validation": "non-negative; vessel totals sum to TOTAL; weighted-mean cross-check <0.06h; Jun-2023 flagged as source carryover of May-2023",
+    "lineage": [
+      "PPA monthly PDFs -> data/ml/sagardrishti_port_waiting_time.parquet -> master (same-month left join)"
+    ],
+    "global_data_downloaded": "NO (12 small India port-specific PDFs, ~5MB)"
+  }
+}

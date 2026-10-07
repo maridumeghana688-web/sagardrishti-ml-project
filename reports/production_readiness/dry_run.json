@@ -1,0 +1,16 @@
+{
+  "stages": [
+    "source_check",
+    "validation",
+    "features",
+    "model_load",
+    "predict",
+    "uncertainty",
+    "store",
+    "monitor",
+    "report"
+  ],
+  "idempotent_rerun": true,
+  "ports_handled": 44,
+  "prediction_rows_unchanged": true
+}

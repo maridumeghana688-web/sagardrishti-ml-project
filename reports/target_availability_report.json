@@ -1,0 +1,45 @@
+{
+  "port_traffic": {
+    "status": "DERIVED",
+    "artifact": "data/ml/sagardrishti_port_traffic.parquet",
+    "rows": 1548,
+    "definition": "monthly per-port observed aggregates + documented traffic_index composite"
+  },
+  "congestion": {
+    "status": "DERIVED",
+    "artifact": "data/ml/sagardrishti_port_congestion.parquet",
+    "rows": 1548,
+    "definition": "documented min-max composite of observed activity; not an official congestion measurement"
+  },
+  "waiting_time": {
+    "status": "DERIVED_SPARSE",
+    "definition": "monthly mean pre-berthing waiting time (arrival-at-reporting-station to operational berth, excl. inward movement), authority-published TOTAL over sailed vessels",
+    "artifact": "data/ml/sagardrishti_port_waiting_time.parquet",
+    "ports_covered": 1,
+    "port_ids": [
+      49535
+    ],
+    "port_names": [
+      "PARADIP"
+    ],
+    "months_covered": [
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-12"
+    ],
+    "n_port_months": 8,
+    "total_vessels": 1785,
+    "mean_h": 1.177,
+    "median_h": 1.205,
+    "min_h": 0.91,
+    "max_h": 1.33,
+    "distributions": "median/p25/p75/max UNAVAILABLE (port reports publish means only; not fabricated)",
+    "master_coverage": "8/1548 master rows (0.52%)",
+    "leakage": "PASS (same-month join; target columns excluded from X_features)"
+  }
+}

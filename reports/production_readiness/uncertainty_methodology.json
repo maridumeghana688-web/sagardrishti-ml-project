@@ -1,0 +1,8 @@
+{
+  "method": "prediction \u00b1 1.28 * sigma_val, sigma = std of validation-period residuals",
+  "sigma_traffic": 48.43938107110154,
+  "sigma_congestion": 0.1500209102507216,
+  "classification": "heuristic estimated_prediction_interval (approx 80% under normality); NOT a calibrated confidence interval",
+  "label": "estimated_prediction_interval",
+  "coverage_2026_backtest_traffic": 0.712
+}

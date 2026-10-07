@@ -1,0 +1,87 @@
+{
+  "acquisition": {
+    "stages": {
+      "A_gfw": {
+        "status": "STOPPED",
+        "error": "STOP SOURCE=GFW STAGE=A_gfw ERROR=credential missing: set GFW_API_TOKEN."
+      },
+      "B_noaa": {
+        "status": "OK",
+        "months": 36
+      },
+      "C_cmems": {
+        "status": "STOPPED",
+        "error": "STOP SOURCE=Copernicus STAGE=C_cmems ERROR=credential missing."
+      },
+      "D_geo": {
+        "status": "OK",
+        "mrgid": 8480
+      },
+      "D_wpi": {
+        "status": "STOPPED",
+        "error": "WPI STATUS=BLOCKED REASON=no download link on NGA page (see wpi_debug.href_sample)"
+      }
+    },
+    "failures": [
+      {
+        "stage": "A_gfw",
+        "error": "STOP SOURCE=GFW STAGE=A_gfw ERROR=credential missing: set GFW_API_TOKEN."
+      },
+      {
+        "stage": "C_cmems",
+        "error": "STOP SOURCE=Copernicus STAGE=C_cmems ERROR=credential missing."
+      },
+      {
+        "stage": "D_wpi",
+        "error": "WPI STATUS=BLOCKED REASON=no download link on NGA page (see wpi_debug.href_sample)"
+      }
+    ],
+    "wpi_debug": {
+      "href_sample": []
+    },
+    "global_data_audit": {
+      "GLOBAL DATA DOWNLOADED": "NO",
+      "ranges": [
+        "GFW: India polygon 65-100E/0-30N monthly",
+        "NOAA: ERDDAP India constraints monthly",
+        "CMEMS: India bbox + surface + monthly",
+        "WPI/EEZ: single-country reference fetches"
+      ]
+    },
+    "copernicus_config": {
+      "surface_only": true,
+      "monthly_only": true,
+      "full_depth": false,
+      "daily_resolution": false,
+      "variables": [
+        "thetao",
+        "so",
+        "uo",
+        "vo"
+      ]
+    }
+  },
+  "qc": {
+    "vessel_activity": {
+      "status": "TARGET NOT DERIVABLE (GFW stage did not complete)"
+    },
+    "environment": {
+      "rows": 604800,
+      "bbox_count": 604800,
+      "mask_count": 234936,
+      "mask_fraction_of_bbox": 0.3885,
+      "time_range": [
+        "2021-01",
+        "2023-12"
+      ],
+      "spatial_resolution": "0.25deg monthly means (NOAA coarsened x6 from 0.0417deg daily; CMEMS x3 from 0.083deg)",
+      "missing_fraction_noaa_sst": 0.2851,
+      "valid_range_qc": "dropped sst outside [-1.8, 45]C contract before averaging",
+      "caveat": "L3C unmasked: residual cloud cold-bias possible; quality flags not served; CMEMS thetao is the primary complementary temperature feature",
+      "cmems": {
+        "status": "SKIPPED (Copernicus stage did not complete)"
+      },
+      "leakage": "PASS (monthly means of contemporaneous obs only)"
+    }
+  }
+}

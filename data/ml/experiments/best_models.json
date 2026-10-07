@@ -1,0 +1,60 @@
+{
+  "traffic_index": {
+    "model": "LightGBM",
+    "params": {
+      "colsample_bytree": 0.662397808134481,
+      "learning_rate": 0.04161672243363989,
+      "n_estimators": 187,
+      "num_leaves": 50,
+      "reg_lambda": 0.9286004537658223,
+      "subsample": 0.8603553891795411
+    },
+    "val": {
+      "model": "LightGBM",
+      "target": "traffic_index",
+      "features": "61-shared-excl-components",
+      "params": {
+        "colsample_bytree": 0.662397808134481,
+        "learning_rate": 0.04161672243363989,
+        "n_estimators": 187,
+        "num_leaves": 50,
+        "reg_lambda": 0.9286004537658223,
+        "subsample": 0.8603553891795411
+      },
+      "cv_best_negMAE": -7.9004,
+      "MAE": 2.707180465556011,
+      "RMSE": 3.8990514894098514,
+      "R2": 0.9595788638360312,
+      "training_time_s": 22.5
+    }
+  },
+  "congestion_index": {
+    "model": "LightGBM",
+    "params": {
+      "colsample_bytree": 0.662397808134481,
+      "learning_rate": 0.04161672243363989,
+      "n_estimators": 187,
+      "num_leaves": 50,
+      "reg_lambda": 0.9286004537658223,
+      "subsample": 0.8603553891795411
+    },
+    "val": {
+      "model": "LightGBM",
+      "target": "congestion_index",
+      "features": "61-shared-excl-components",
+      "params": {
+        "colsample_bytree": 0.662397808134481,
+        "learning_rate": 0.04161672243363989,
+        "n_estimators": 187,
+        "num_leaves": 50,
+        "reg_lambda": 0.9286004537658223,
+        "subsample": 0.8603553891795411
+      },
+      "cv_best_negMAE": -0.0581,
+      "MAE": 0.019177911987367326,
+      "RMSE": 0.027945851512098607,
+      "R2": 0.973260886785456,
+      "training_time_s": 25.6
+    }
+  }
+}

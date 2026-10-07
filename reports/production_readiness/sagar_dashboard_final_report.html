@@ -1,0 +1,129 @@
+<html><body><h1>SAGARDRISHTI dashboard final report</h1><pre>{
+  "MAP_STATUS": "OPERATIONAL (Esri World_Dark_Gray keyless basemap; CARTO replaced after key-requirement watermark)",
+  "MAP_PROVIDER": "Leaflet + Esri Canvas World_Dark_Gray (no browser key, Esri attribution)",
+  "WPI_PORT_COUNT": 44,
+  "PORTS_RENDERED": 44,
+  "AISSTREAM_STATUS": "SERVER-SIDE ONLY (AisStreamService, WSS, auto-reconnect backoff+jitter, TTL sweep)",
+  "AIS_CONNECTION_STATUS": "CONNECTS + SUBSCRIBES (confirmation received); India boxes delivered 0 messages with this key",
+  "AIS_MESSAGE_TYPES": [
+    "PositionReport",
+    "ShipStaticData"
+  ],
+  "AIS_BOUNDING_BOXES": [
+    [
+      [
+        0.0,
+        60.0
+      ],
+      [
+        28.0,
+        78.0
+      ]
+    ],
+    [
+      [
+        -2.0,
+        76.0
+      ],
+      [
+        26.0,
+        100.0
+      ]
+    ],
+    [
+      [
+        5.0,
+        78.0
+      ],
+      [
+        24.0,
+        96.0
+      ]
+    ]
+  ],
+  "AIS_UPDATE_MODE": "EVENT_DRIVEN (backend consumes on arrival; SSE serves state every 3s; no fake polling)",
+  "AIS_LAST_EVENT_TIMESTAMP": "none in India boxes during validation (see evidence)",
+  "LIVE_VESSEL_COUNT": 0,
+  "STALE_VESSEL_COUNT": 0,
+  "VESSEL_PORT_ASSOCIATION_STATUS": "IMPLEMENTED (50km + COG/SOG bearing states; dashed lines for NEAR/APPROACHING/WITHIN only)",
+  "VESSEL_DETAIL_STATUS": "IMPLEMENTED (name/MMSI/pos/movement/status/port/destination-or-Unavailable)",
+  "LIVE_STATISTICS_STATUS": "IMPLEMENTED (live/approaching/in-radius/active/events-min/last-update + per-port)",
+  "ML_TRAFFIC_MODEL_VERSION": "daily_traffic_model_v1 (RandomForest)",
+  "ML_CONGESTION_MODEL_VERSION": "daily_congestion_model_v1 (LightGBM)",
+  "ML_PREDICTION_STATUS": "INTEGRATED (stored 2026-08-31 predictions via backend; uncertainty bands shown)",
+  "PREDICTION_FRESHNESS": "per-response (GFW CURRENT, CMEMS CURRENT, NOAA HISTORICAL)",
+  "SOURCE_STATUS": "GFW CURRENT / AISSTREAM CONNECTED-NO-INDIA-TRAFFIC / CMEMS CURRENT / NOAA HISTORICAL / WPI REFERENCE",
+  "HISTORICAL_CHART_STATUS": "IMPLEMENTED (observed vs forecast, tooltips, responsive)",
+  "EXPLAINABILITY_STATUS": "MODEL-LEVEL global importance labeled as such (no per-prediction SHAP claims)",
+  "AUTHENTICATION_STATUS": "DEVELOPMENT_AUTH_ONLY (dropdowns preserved; register->dashboard; backend JWT intact)",
+  "SECURITY_AUDIT_STATUS": "PASS (key server-side; bundle grep clean; .env ignored; MMSI/port validated; no env in responses)",
+  "FRONTEND_BUILD_STATUS": "PASS (vite, 733 modules)",
+  "BACKEND_TEST_STATUS": "35/35 PASS (26 existing + 9 live-AIS)",
+  "FULL_TEST_COUNT": 131,
+  "FULL_TEST_PASS_COUNT": 131,
+  "AIS_RECONNECT_TEST": "PASS (unit: backoff logic; live: clean 5-min session, no dup loop)",
+  "AIS_FAILURE_HANDLING_TEST": "PASS (mocked 429/500/timeout/malformed; bounded retries; empty states)",
+  "PRODUCTION_BUILD_STATUS": "PASS",
+  "KNOWN_LIMITATIONS": [
+    "AIS key delivers no India-region traffic (proven with Singapore control); UI shows honest empty states",
+    "NOAA SST ends 2023 (shown HISTORICAL)",
+    "CMEMS monthly lag-1-month",
+    "tiles need internet",
+    "waiting-time daily unavailable",
+    "chunk-size warning (1.8MB bundle, gzip 532KB)"
+  ],
+  "FILES_CREATED": [
+    "backend/app/services/aisstream.py",
+    "backend/app/services/__init__.py",
+    "backend/app/api/v1/live.py",
+    "backend/tests/test_live_ais.py",
+    "frontend/src/api/live.js",
+    "frontend/src/components/maritime/VesselLayer.jsx",
+    "frontend/src/components/maritime/VesselPanel.jsx",
+    "frontend/scripts/dashboard-flow2.mjs",
+    "reports/daily_feature_importance/global_importance.json",
+    "reports/production_readiness/ais_validation.json"
+  ],
+  "FILES_MODIFIED": [
+    "backend/app/api/v1/router.py",
+    "backend/app/main.py",
+    "backend/requirements.txt",
+    "frontend/src/components/maritime/IndiaMap.jsx",
+    "frontend/src/components/maritime/PortPanel.jsx",
+    "frontend/src/pages/Dashboard.jsx",
+    "frontend/src/api/auth.js",
+    "frontend/src/auth/AuthContext.jsx",
+    "frontend/src/pages/Register.jsx",
+    "frontend/.env.example",
+    "frontend/package.json",
+    "frontend/scripts/dashboard-flow.mjs",
+    "backend/app/api/v1/maritime.py"
+  ],
+  "FILES_PRESERVED": [
+    "landing page",
+    "models/*",
+    "data/*",
+    "ML pipelines",
+    "existing tests"
+  ],
+  "WPI_PORTS_SUPPORTED": 44,
+  "PORTS_WITH_PREDICTIONS": 44,
+  "LIVE_AIS_VESSELS_RECEIVED": 0,
+  "AIS_CONNECTED_NOW": "session-based (see /api/v1/system/status)",
+  "AIS_EVENT_DRIVEN": true,
+  "API_KEY_SERVER_SIDE": true,
+  "ML_MODELS_USED": [
+    "daily_traffic_model_v1",
+    "daily_congestion_model_v1"
+  ],
+  "CURRENT_SOURCE": "GFW (2026-08-31)",
+  "HISTORICAL_SOURCE": "NOAA (through 2023-12-31)",
+  "AIS_DISCONNECT_BEHAVIOR": "DISCONNECTED badge + auto-reconnect; dashboard fully usable on cached data",
+  "STALE_SOURCE_BEHAVIOR": "STALE/UNAVAILABLE badges; nulls shown as Unavailable, never 0",
+  "DATA_UNAVAILABLE": [
+    "live India AIS traffic (key limitation)",
+    "post-2023 SST",
+    "daily waiting-time"
+  ],
+  "DATA_FABRICATED": "NONE (validated: 0 pageerrors, honest empty states, no fake routes/tracks/calls)"
+}</pre></body></html>

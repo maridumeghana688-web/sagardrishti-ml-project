@@ -1,0 +1,18 @@
+{
+  "run": "2026-09-30 13:39:04.249977+00:00",
+  "target_date": "2026-04-15",
+  "rows": 44,
+  "source_check": {
+    "gfw_partitions": 68,
+    "noaa_files": 36,
+    "noaa_latest": "2023-12-31 (product ended)",
+    "cmems_months": 65,
+    "checked_at": "2026-09-30T13:39:01.379549+00:00"
+  },
+  "freshness": {
+    "local_latest_date": "2026-08-31",
+    "data_age_days": 30,
+    "status": "STALE",
+    "note": "GFW through 2026-08-31; NOAA SST ends 2023-12-31 (product termination, not pipeline failure)"
+  }
+}

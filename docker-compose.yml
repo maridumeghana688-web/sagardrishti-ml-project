@@ -1,0 +1,49 @@
+# SAGARDRISHTI — Phase 1 services.
+# All secrets come from `.env` (see `.env.example`). Compose only supplies
+# non-secret defaults for local development; override in real deployments.
+name: sagardrishti
+
+services:
+  db:
+    image: postgis/postgis:15-3.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sagardrishti}
+      POSTGRES_USER: ${POSTGRES_USER:-sagardrishti}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme_in_dotenv}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-sagardrishti}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-sagardrishti}:${POSTGRES_PASSWORD:-changeme_in_dotenv}@db:5432/${POSTGRES_DB:-sagardrishti}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://localhost:3000}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    volumes:
+      - ./backend/app:/code/app:ro
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+
+volumes:
+  pgdata:

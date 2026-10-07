@@ -1,0 +1,56 @@
+{
+  "grain": "port-month",
+  "train": {
+    "start": "2021-01",
+    "end": "2022-12",
+    "note": "24 months x ports with activity"
+  },
+  "validation": {
+    "start": "2023-01",
+    "end": "2023-06"
+  },
+  "test": {
+    "start": "2023-07",
+    "end": "2023-12"
+  },
+  "method": "temporal holdout, no shuffling",
+  "leakage": "PASS by construction (same-month joins only)",
+  "waiting_time": "excluded (unavailable)",
+  "targets": {
+    "port_traffic": "traffic_target",
+    "congestion": "congestion_index",
+    "waiting_time": "waiting_time_mean_hours (sparse: Paradip Apr-Dec 2023 excl Nov; use subset training)"
+  },
+  "waiting_time_note": "sparse target: 8/1548 master rows; train/eval on covered subset only; never impute",
+  "train_start": "2021-01",
+  "train_end": "2022-12",
+  "validation_start": "2023-01",
+  "validation_end": "2023-06",
+  "test_start": "2023-07",
+  "test_end": "2023-12",
+  "train_n": 1032,
+  "train_ports": 43,
+  "validation_n": 258,
+  "validation_ports": 43,
+  "test_n": 258,
+  "test_ports": 43,
+  "warmup_note": "lag_3 needs 3 prior months: Jan-Mar 2021 rows have NaN lags, imputed with TRAIN medians inside pipelines; no rows dropped, no test leakage",
+  "rolling_origin_folds": [
+    {
+      "fold": 1,
+      "train": "2021",
+      "validate": "2022-H1"
+    },
+    {
+      "fold": 2,
+      "train": "2021..2022-H1",
+      "validate": "2022-H2"
+    },
+    {
+      "fold": 3,
+      "train": "2021..2022",
+      "validate": "2023-H1"
+    }
+  ],
+  "test_use_rule": "test (2023-H2) used exactly once for final evaluation"
+}

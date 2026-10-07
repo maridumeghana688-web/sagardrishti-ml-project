@@ -1,0 +1,35 @@
+{
+  "source": "NGA World Port Index Pub 150",
+  "access_method": "Esri-hosted WPI FeatureServer query where=COUNTRY='IN' (India-constrained, 44 records, ~tens of KB); official NGA page https://msi.nga.mil/Publications/WPI returned 503 (Akamai/bot-mitigation) on direct fetch 2026-09-28",
+  "version_date": "dataLastEditDate 2018-06-27T07:34:51 (stale snapshot; documented limitation)",
+  "original_row_count": 44,
+  "india_row_count_query": 44,
+  "invalid_coordinate_count": 0,
+  "duplicate_port_id_count": 0,
+  "duplicate_name_coord_count": 0,
+  "geometry_mismatch_count": 0,
+  "final_port_count": 44,
+  "un_locode_available": false,
+  "provenance": "serviceItemId 8be585162b814e1f89afa6a3de4e42cb, layer 'Ports of the World (WPI)'; raw saved at data/work_wpi/wpi_india_raw_arcgis.json; NGA viewer docs confirm official CSV/JSON/SHP/GPKG/FGDB outputs",
+  "acquisition_method": "server-side COUNTRY='IN' filter + pagination (India-only, no global download); normalized to data/reference/india_ports.parquet/csv",
+  "fields_preserved": [
+    "port_id(INDEX_NO)",
+    "port_name",
+    "country",
+    "latitude",
+    "longitude",
+    "wpi_region_no",
+    "harbor_size",
+    "harbor_type",
+    "shelter",
+    "chart_ref",
+    "pub_ref",
+    "max_vessel",
+    "tide_range"
+  ],
+  "limitation": "2018 snapshot predates 2019 27th edition PDF and current viewer DB; UN/LOCODE not in this schema; coordinates validated but not independently hydrographically verified; WPI is a PORT REFERENCE, not traffic measurements",
+  "outputs": [
+    "data/reference/india_ports.parquet",
+    "data/reference/india_ports.csv"
+  ]
+}

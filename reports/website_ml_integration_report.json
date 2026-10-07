@@ -1,0 +1,30 @@
+{
+  "frontend": "COMPLETE (dashboard rebuilt; landing untouched; same Tailwind tokens ocean/ink/intel, Manrope/Inter, btn-primary, eyebrow)",
+  "backend_api": "COMPLETE (backend/app/api/v1/maritime.py: health/sources/ports/ports{id}/predictions{predictions?date}/environment/vessel-activity/analytics; real parquet+joblib; no secrets)",
+  "ports_displayed": 44,
+  "ports_with_predictions": 44,
+  "traffic_integration": "daily_traffic_model_v1 (RF) via stored predictions 2026-08-31",
+  "congestion_integration": "daily_congestion_model_v1 (LightGBM)",
+  "environmental": "SST/salinity/current (honest nulls post-2023/2026-06)",
+  "vessel_activity": "GFW daily observed (absent=zero)",
+  "freshness": "per API (GFW CURRENT, CMEMS CURRENT, NOAA HISTORICAL)",
+  "authentication": "DEVELOPMENT_AUTH_ONLY (VITE_DEV_AUTH; local any-credentials; backend JWT preserved; org/department dropdowns; register->/dashboard)",
+  "api_endpoints": 8,
+  "model_versions": [
+    "daily_traffic_model_v1",
+    "daily_congestion_model_v1"
+  ],
+  "tests": {
+    "ml_root": "87/87",
+    "backend": "26/26 (17 auth/health + 9 maritime)",
+    "browser_flow": "16/16 checks, 0 pageerrors"
+  },
+  "limitations": [
+    "tiles need internet (CARTO dark)",
+    "dev auth replaces real login until VITE_DEV_AUTH=false",
+    "NOAA historical-only",
+    "waiting-time unavailable daily"
+  ],
+  "waiting_time": "UNAVAILABLE daily (8 monthly Paradip labels; no model)",
+  "security": "no tokens in frontend bundle (grep clean); creds backend-only; .env ignored"
+}

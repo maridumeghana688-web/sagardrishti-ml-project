@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><title>SAGARDRISHTI acquisition report</title><style>body{font-family:sans-serif;margin:2rem}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px 10px;vertical-align:top}</style></head><body><h1>SAGARDRISHTI — acquisition report (Kaggle execution)</h1><table><tr><th>stage</th><th>status</th><th>detail</th></tr><tr><td>A_gfw</td><td style="color:#C0392B;font-weight:bold">STOPPED</td><td style="font-size:13px"><b>error:</b> STOP SOURCE=GFW STAGE=A_gfw ERROR=credential missing: set GFW_API_TOKEN.</td></tr><tr><td>B_noaa</td><td style="color:#2E7D5B;font-weight:bold">OK</td><td style="font-size:13px"><b>months:</b> 36</td></tr><tr><td>C_cmems</td><td style="color:#C0392B;font-weight:bold">STOPPED</td><td style="font-size:13px"><b>error:</b> STOP SOURCE=Copernicus STAGE=C_cmems ERROR=credential missing.</td></tr><tr><td>D_geo</td><td style="color:#2E7D5B;font-weight:bold">OK</td><td style="font-size:13px"><b>mrgid:</b> 8480</td></tr><tr><td>D_wpi</td><td style="color:#C0392B;font-weight:bold">STOPPED</td><td style="font-size:13px"><b>error:</b> WPI STATUS=BLOCKED REASON=no download link on NGA page (see wpi_debug.href_sample)</td></tr></table><h2>Global-data audit</h2><pre>{"GLOBAL DATA DOWNLOADED": "NO", "ranges": ["GFW: India polygon 65-100E/0-30N monthly", "NOAA: ERDDAP India constraints monthly", "CMEMS: India bbox + surface + monthly", "WPI/EEZ: single-country reference fetches"]}</pre><h2>QC</h2><pre>{
+  "vessel_activity": {
+    "status": "TARGET NOT DERIVABLE (GFW stage did not complete)"
+  },
+  "environment": {
+    "rows": 604800,
+    "bbox_count": 604800,
+    "mask_count": 234936,
+    "mask_fraction_of_bbox": 0.3885,
+    "time_range": [
+      "2021-01",
+      "2023-12"
+    ],
+    "spatial_resolution": "0.25deg monthly means (NOAA coarsened x6 from 0.0417deg daily; CMEMS x3 from 0.083deg)",
+    "missing_fraction_noaa_sst": 0.2851,
+    "valid_range_qc": "dropped sst outside [-1.8, 45]C contract before averaging",
+    "caveat": "L3C unmasked: residual cloud cold-bias possible; quality flags not served; CMEMS thetao is the primary complementary temperature feature",
+    "cmems": {
+      "status": "SKIPPED (Copernicus stage did not complete)"
+    },
+    "leakage": "PASS (monthly means of contemporaneous obs only)"
+  }
+}</pre></body></html>

@@ -1,0 +1,5 @@
+{
+  "rejected": [],
+  "distributions_unavailable_reason": "port reports publish monthly means + vessel counts only; no vessel-level timestamps, hence median/p25/p75/max are NA (not fabricated)",
+  "unlocode_reason": "WPI snapshot schema has no UN/LOCODE field; left NA rather than invented"
+}

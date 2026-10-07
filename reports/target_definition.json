@@ -1,0 +1,45 @@
+{
+  "traffic": {
+    "primary": "traffic_index",
+    "formulation": "REGRESSION",
+    "derivation": "log1p(vessel_presence_hours)*log1p(vessel_count_sum); components retained",
+    "alternatives": {
+      "vessel_activity_count": "count of cell-flag units (observed)",
+      "vessel_presence_hours": "sum hours = traffic_target (observed)",
+      "vessel_count_sum": "APPROXIMATE, may double-count across flags/cells (documented)"
+    },
+    "decision": "primary traffic_index; presence_hours as secondary observed check"
+  },
+  "congestion": {
+    "primary": "congestion_index",
+    "formulation": "REGRESSION",
+    "derivation": "0.5*minmax(hours)+0.3*minmax(count)+0.2*minmax(activity) over port-months",
+    "classification": {
+      "allowed": true,
+      "labels": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "thresholds": {
+        "q33": 0.0824,
+        "q66": 0.206
+      },
+      "justification": "tertile split gives balanced classes; counts: {'LOW': 516, 'MEDIUM': 516, 'HIGH': 516}",
+      "note": "operational thresholds would need port-authority input; tertiles are statistical, documented as such"
+    }
+  },
+  "waiting": {
+    "primary": "waiting_time_mean_hours",
+    "labels": 8,
+    "ports": 1,
+    "months": 8,
+    "span": [
+      "2023-04",
+      "2023-12"
+    ],
+    "feasibility": "INSUFFICIENT for train/val/test supervised modeling (8 labels cannot split 3 ways)",
+    "WAITING_TIME_MODEL_STATUS": "EXPERIMENTAL_INSUFFICIENT_LABELS",
+    "allowed": "descriptive stats + clearly-labeled experimental demonstration only (e.g., leave-one-out illustration); never fabricate"
+  }
+}

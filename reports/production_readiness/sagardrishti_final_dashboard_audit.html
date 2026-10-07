@@ -1,0 +1,32 @@
+<html><body><h1>Final dashboard audit</h1><pre>{
+  "AIS_CONNECTION_STATUS": "HEALTHY when backend runs (startup auto-connect; prior DISCONNECTED was a missing-Path-import NameError on every attempt - fixed and verified connected=true, errors=0)",
+  "AIS_INDIAN_TRAFFIC_STATUS": "CONNECTION HEALTHY, INDIA TRAFFIC NOT OBSERVED (0 messages/5min in India boxes; Singapore control box streams - key/coverage limitation)",
+  "LAST_AIS_MESSAGE": "none in India boxes (see ais_validation.json)",
+  "LIVE_VESSEL_COUNT": 0,
+  "ASSOCIATED_VESSEL_COUNT": 0,
+  "WPI_PORTS": 44,
+  "PORTS_WITH_PREDICTIONS": 44,
+  "TRAFFIC_MODEL": "daily_traffic_model_v1 (unchanged)",
+  "CONGESTION_MODEL": "daily_congestion_model_v1 (unchanged)",
+  "PREDICTION_API": "HEALTHY (all 8 endpoints 200; false 'unavailable' banner only appears when backend is down)",
+  "GFW_FRESHNESS": "CURRENT (2026-08-31)",
+  "CMEMS_FRESHNESS": "CURRENT (2026-05 monthly)",
+  "NOAA_FRESHNESS": "HISTORICAL (ends 2023-12-31; never labeled current)",
+  "WPI_STATUS": "STATIC REFERENCE (44 ports)",
+  "MAP_PROVIDER": "Leaflet + Esri World_Dark_Gray keyless (CARTO replaced after key watermark); legend + layer toggles + radius + association lines",
+  "SECURITY": "PASS (key server-side; bundle grep clean; .env ignored; MMSI/port validated)",
+  "FRONTEND_TESTS": "N/A (no runner configured); browser flow scripts: 16/16 PASS, 0 pageerrors",
+  "BACKEND_TESTS": "35/35 PASS",
+  "BROWSER_TESTS": "16/16 PASS",
+  "BUILD": "PASS (vite 733 modules)",
+  "LIMITATIONS": [
+    "no India AIS traffic with current key",
+    "NOAA ends 2023",
+    "tiles need internet",
+    "waiting daily unavailable",
+    "chunk-size warning noted"
+  ],
+  "BLOCKERS": [
+    "India-region AIS traffic (provider/key side; code proven with control box)"
+  ]
+}</pre></body></html>

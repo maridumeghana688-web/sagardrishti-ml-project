@@ -1,0 +1,51 @@
+{
+  "traffic_target_next_day": {
+    "validation": {
+      "model": "RandomForest",
+      "MAE": 70.69302875062095,
+      "RMSE": 139.35585851755698,
+      "R2": 0.9642736871956876
+    },
+    "test": {
+      "MAE": 80.5297898505604,
+      "RMSE": 173.96349990793004,
+      "R2": 0.95210849010762
+    },
+    "naive_val_MAE": 90.548869846001,
+    "models_beat_naive": true
+  },
+  "congestion_target_next_day": {
+    "validation": {
+      "model": "LightGBM",
+      "MAE": 0.1172969613105515,
+      "RMSE": 0.2011801768863606,
+      "R2": 0.9596428335854236
+    },
+    "test": {
+      "MAE": 0.12142622695569588,
+      "RMSE": 0.20648874457022753,
+      "R2": 0.9635743355224622
+    },
+    "naive_val_MAE": 0.1706858451665954,
+    "models_beat_naive": true
+  },
+  "TEST_SET_USED_FOR_MODEL_SELECTION": false,
+  "live_2026": {
+    "n_compared": 10648,
+    "traffic_MAE": 106.04,
+    "traffic_RMSE": 336.54,
+    "traffic_bias": -31.82,
+    "cong_MAE": 0.1313,
+    "coverage_inside_interval_traffic": 0.712,
+    "rolling_MAE_by_month": {
+      "2026-01": 92.41,
+      "2026-02": 84.6,
+      "2026-03": 113.7,
+      "2026-04": 120.67,
+      "2026-05": 141.81,
+      "2026-06": 86.23,
+      "2026-07": 96.42,
+      "2026-08": 109.77
+    }
+  }
+}

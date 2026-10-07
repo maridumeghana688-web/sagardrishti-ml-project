@@ -1,0 +1,186 @@
+{
+  "traffic_target_next_day": [
+    {
+      "feature": "num__presence_hours_roll3_max",
+      "importance": 0.7638756515364329,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll14_mean",
+      "importance": 0.06614048812568081,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll7_mean",
+      "importance": 0.02936289349523814,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll30_mean",
+      "importance": 0.027926989357263753,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_lag1",
+      "importance": 0.020127345295381436,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__gfw_derived_daily_congestion_proxy",
+      "importance": 0.01876731422342038,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_lag30",
+      "importance": 0.016234929348648824,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__day_of_month",
+      "importance": 0.013314672224201038,
+      "direction": "down",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll3_mean",
+      "importance": 0.004783829162702795,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__activity_lag30",
+      "importance": 0.0023978246341412753,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll7_max",
+      "importance": 0.0022630899884911624,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__sin_day_of_year",
+      "importance": 0.0016180108015724389,
+      "direction": "down",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__cos_day_of_year",
+      "importance": 0.0014366763916902933,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll30_std",
+      "importance": 0.0011017944777785382,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_roll14_std",
+      "importance": 0.0007697050098292943,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    }
+  ],
+  "congestion_target_next_day": [
+    {
+      "feature": "num__gfw_derived_daily_congestion_proxy",
+      "importance": 932,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__day_of_month",
+      "importance": 692,
+      "direction": "down",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__sin_day_of_year",
+      "importance": 338,
+      "direction": "down",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__cos_day_of_year",
+      "importance": 279,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_lag30",
+      "importance": 207,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__activity_lag30",
+      "importance": 185,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__vessel_count_change_1d",
+      "importance": 185,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_change_7d",
+      "importance": 170,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__day_of_year",
+      "importance": 155,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__vessel_count_lag14",
+      "importance": 152,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_change_1d",
+      "importance": 152,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__vessel_count_roll30_mean",
+      "importance": 143,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__presence_hours_lag1",
+      "importance": 141,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__vessel_count_roll7_min",
+      "importance": 123,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    },
+    {
+      "feature": "num__vessel_count_roll14_mean",
+      "importance": 122,
+      "direction": "up",
+      "direction_note": "observational association on train data (not causal)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "command": "python -m src.daily_pipeline.run_daily [--date YYYY-MM-DD]",
+  "steps": [
+    "source_check",
+    "fetch missing (skip .complete)",
+    "validate",
+    "features",
+    "predict",
+    "store (dedupe by target_date)",
+    "monitoring"
+  ],
+  "idempotent": true,
+  "resume_safe": true,
+  "credentials": ".env only, never hard-coded",
+  "suggested_cron": "0 6 * * * (operator timezone; after GFW daily latency window)"
+}

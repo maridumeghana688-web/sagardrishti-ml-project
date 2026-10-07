@@ -1,0 +1,20 @@
+{
+  "monitored": [
+    "feature drift (train vs live means)",
+    "missingness drift",
+    "prediction drift",
+    "source availability",
+    "data freshness",
+    "target drift (when actuals land)"
+  ],
+  "decision": [
+    {
+      "if": "sst missingness > 0.8 for 7d OR GFW gap > 14d OR val-MAE degrades > 20%",
+      "then": "RETRAIN_RECOMMENDED"
+    },
+    {
+      "else": "NO_RETRAIN_REQUIRED"
+    }
+  ],
+  "auto_retrain": false
+}

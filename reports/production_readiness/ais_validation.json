@@ -1,0 +1,7 @@
+{
+  "india_boxes_result": "connected + subscription confirmed, 0 PositionReports in 5 min across 3 India boxes (with and without type filter)",
+  "key_path_proof": "Singapore box (lat 1-2, lon 103-104.5) delivered 32 genuine PositionReports in 75 s (names/MMSI/lat/lon/SOG/COG present)",
+  "conclusion": "end-to-end real-message path PROVEN; India-region traffic not delivered with this key (key/coverage limitation, not a code bug)",
+  "bbox_fix": "initial boxes used lon/lat order (received Norway traffic); corrected to AISStream [[lat,lon],[lat,lon]] order",
+  "ui_behavior": "CONNECTED + NO INDIA TRAFFIC empty states; no fabricated vessels"
+}

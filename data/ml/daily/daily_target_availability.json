@@ -1,0 +1,17 @@
+{
+  "ports": 44,
+  "days": 1094,
+  "port_day_rows": 48136,
+  "date_range": [
+    "2021-01-01 00:00:00+00:00",
+    "2023-12-31 00:00:00+00:00"
+  ],
+  "missing_source_days": [
+    "2022-07-02 (absent in NOAA file)"
+  ],
+  "sst_null_frac": 0.6283,
+  "traffic_target availability": 0.0,
+  "congestion_target availability": 0.0,
+  "waiting_time": "SEPARATE (8 monthly Paradip labels; NOT disaggregated to daily)",
+  "verdict": "daily supervised traffic/congestion targets UNAVAILABLE from monthly GFW source"
+}

@@ -1,0 +1,66 @@
+<html><body><h1>Live source availability</h1><pre>{
+  "credentials": {
+    "GFW_API_TOKEN": "PRESENT",
+    "COPERNICUSMARINE_SERVICE_USERNAME": "PRESENT",
+    "COPERNICUSMARINE_SERVICE_PASSWORD": "PRESENT"
+  },
+  "GFW": {
+    "endpoint": "POST /v3/4wings/report",
+    "dataset": "public-global-presence:latest",
+    "earliest_needed": "2021-01-01",
+    "have_through": "2023-12-31",
+    "probes": {
+      "2024-06": {
+        "http": 200,
+        "rows_2x2deg_3days": 325,
+        "daily": true
+      },
+      "2025-06": {
+        "http": 200,
+        "rows_2x2deg_3days": 395,
+        "daily": true
+      },
+      "2026-01": {
+        "http": 200,
+        "rows_2x2deg_3days": 454,
+        "daily": true
+      },
+      "2026-09": {
+        "http": 200,
+        "rows_2x2deg_3days": 271,
+        "daily": true
+      },
+      "2023-12": {
+        "http": 200,
+        "rows_2x2deg_3days": 834,
+        "daily": true
+      }
+    },
+    "latest_available": "2026-09 (probed daily OK: 2024-06, 2025-06, 2026-01, 2026-09)",
+    "acquire_through": "2026-08-31 (full months only)"
+  },
+  "NOAA": {
+    "product": "nceiPH53sstd1day",
+    "coverage": "1981-08-25 to 2023-12-31 (CDR terminated)",
+    "beyond_2023": "UNAVAILABLE - no 2024/2025/2026 SST from this product"
+  },
+  "CMEMS": {
+    "monthly_P1M-m": "available through 2026-05 monthly mean (time coords 1993-01-01..2026-06-01)",
+    "daily_P1D-m": "EXISTS but REJECTED: ~32MB/week x4 vars -> ~4.5GB for 2024+, exceeds remaining budget + project monthly-only rule",
+    "decision": "retain monthly lag-1-month"
+  },
+  "WPI": {
+    "nature": "static reference",
+    "ports": 44,
+    "snapshot": "2018 (existing india_ports.parquet)"
+  },
+  "coverage_matrix": {
+    "2021": "GFW YES / NOAA YES / CMEMS YES / ML YES",
+    "2022": "YES/YES/YES/YES",
+    "2023": "YES/YES/YES/YES",
+    "2024": "GFW YES / NOAA NO / CMEMS YES / ML YES-SST-missing",
+    "2025": "GFW YES / NOAA NO / CMEMS YES / ML YES-SST-missing",
+    "2026-01..08": "GFW YES / NOAA NO / CMEMS YES(lag-1 through Jun) / ML YES-SST-missing"
+  },
+  "COMMON_ML_PERIOD": "2021-01-01..2026-08-31 with per-source availability flags; full-feature 2021-2023"
+}</pre></body></html>

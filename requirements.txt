@@ -1,0 +1,4 @@
+# SAGARDRISHTI — root dependencies (backend / data stack).
+# Install with:  pip install -r requirements.txt
+# For containerised runs you do not need this; see docker-compose.yml.
+-r backend/requirements.txt

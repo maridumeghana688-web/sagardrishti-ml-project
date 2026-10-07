@@ -1,0 +1,40 @@
+{
+  "feature_drift_sst_mean": {
+    "train": 22.603,
+    "test": 20.967
+  },
+  "missingness_drift_sst": {
+    "train": 0.6232,
+    "test": 0.6735
+  },
+  "prediction_drift": "N/A (no daily models trained)",
+  "source_availability": {
+    "noaa_days_present": 1094,
+    "expected": 1095,
+    "missing": [
+      "2022-07-02"
+    ]
+  },
+  "out_of_range": {
+    "sst_below_-1.8_or_above_45": 0
+  },
+  "stale_rule": "flag port-days with null SST (cloud gaps) as stale-input at inference",
+  "live_backtest_2026": {
+    "n_compared": 10648,
+    "traffic_MAE": 106.04,
+    "traffic_RMSE": 336.54,
+    "traffic_bias": -31.82,
+    "cong_MAE": 0.1313,
+    "coverage_inside_interval_traffic": 0.712,
+    "rolling_MAE_by_month": {
+      "2026-01": 92.41,
+      "2026-02": 84.6,
+      "2026-03": 113.7,
+      "2026-04": 120.67,
+      "2026-05": 141.81,
+      "2026-06": 86.23,
+      "2026-07": 96.42,
+      "2026-08": 109.77
+    }
+  }
+}

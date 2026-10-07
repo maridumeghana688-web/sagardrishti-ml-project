@@ -1,0 +1,439 @@
+{
+  "features": [
+    {
+      "feature": "mean_distance_km",
+      "source": "GFW 4Wings aggregates",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "latitude",
+      "source": "?",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "longitude",
+      "source": "?",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_lat",
+      "source": "WPI india_ports",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_lon",
+      "source": "WPI india_ports",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_thetao",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_so",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_uo",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_vo",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "in_india_mask",
+      "source": "?",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "env_grid_lat",
+      "source": "?",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "env_grid_lon",
+      "source": "?",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_harbor_size",
+      "source": "WPI",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_harbor_type",
+      "source": "WPI",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_shelter",
+      "source": "WPI",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_max_vessel",
+      "source": "WPI",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "port_tide_range",
+      "source": "WPI india_ports",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "year",
+      "source": "time",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "month_number",
+      "source": "time",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "quarter",
+      "source": "time",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sin_month",
+      "source": "time",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cos_month",
+      "source": "time",
+      "time_relationship": "static",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_thetao_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_so_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_uo_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "cmems_vo_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_anom",
+      "source": "NOAA/CMEMS",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_lag1",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_lag2",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_lag3",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_roll3m",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_roll3m_std",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_presence_hours_roll6m",
+      "source": "vessel_presence_hours",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_lag1",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_lag2",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_lag3",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_roll3m",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_roll3m_std",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_activity_count_roll6m",
+      "source": "vessel_activity_count",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_lag1",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_lag2",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_lag3",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_roll3m",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_roll3m_std",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "vessel_count_sum_roll6m",
+      "source": "vessel_count_sum",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_lag1",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_lag2",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_lag3",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_roll3m",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_roll3m_std",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_monthly_mean_roll6m",
+      "source": "sst_monthly_mean",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_lag1",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_lag2",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_lag3",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_roll3m",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_roll3m_std",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "current_magnitude_roll6m",
+      "source": "current_magnitude",
+      "time_relationship": "past",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "sst_x_current",
+      "source": "product of same-month predictors",
+      "time_relationship": "contemporaneous-predictor",
+      "target_relationship": "excluded-components enforced; no target/index columns present",
+      "leakage_status": "PASS"
+    },
+    {
+      "feature": "naive_prev_month_baseline",
+      "note": "uses actual past target values as forecast input (legitimate)",
+      "leakage_status": "PASS"
+    }
+  ],
+  "TEMPORAL_LEAKAGE": "PASS",
+  "TARGET_LEAKAGE": "PASS",
+  "notes": "component exclusion (vessel contemporaneous components out); train-only anomaly stats; test single-use; waiting never a feature"
+}

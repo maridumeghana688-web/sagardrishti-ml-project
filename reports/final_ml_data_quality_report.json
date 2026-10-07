@@ -1,0 +1,1084 @@
+{
+  "environment": {
+    "path": "data/ml/sagardrishti_india_environment.parquet",
+    "rows": 604800,
+    "columns": [
+      "time",
+      "lat",
+      "lon",
+      "sst_monthly_mean",
+      "cmems_thetao",
+      "cmems_so",
+      "cmems_uo",
+      "cmems_vo",
+      "current_magnitude",
+      "in_india_mask",
+      "sst_units",
+      "cmems_ocean_mask_note",
+      "provenance_noaa",
+      "provenance_cmems",
+      "spatial_join_method"
+    ],
+    "n_columns": 15,
+    "size_bytes": 13451313,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "time": 0.0,
+      "lat": 0.0,
+      "lon": 0.0,
+      "sst_monthly_mean": 0.2851,
+      "cmems_thetao": 0.4058,
+      "cmems_so": 0.4058,
+      "cmems_uo": 0.4058,
+      "cmems_vo": 0.4058,
+      "current_magnitude": 0.4058,
+      "in_india_mask": 0.0,
+      "sst_units": 0.0,
+      "cmems_ocean_mask_note": 0.0,
+      "provenance_noaa": 0.0,
+      "provenance_cmems": 0.0,
+      "spatial_join_method": 0.0
+    },
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "lat_range": [
+      0.16666635870933533,
+      29.916610717773438
+    ],
+    "lon_range": [
+      65.12493896484375,
+      99.87490844726562
+    ],
+    "numeric_summary": {
+      "lat": {
+        "min": 0.16666635870933533,
+        "max": 29.916610717773438,
+        "mean": 15.041638374328613,
+        "median": 15.041638374328613,
+        "std": 8.659944534301758,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "lon": {
+        "min": 65.12493896484375,
+        "max": 99.87490844726562,
+        "mean": 82.49993133544922,
+        "median": 82.49992370605469,
+        "std": 10.103372573852539,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "sst_monthly_mean": {
+        "min": -1.7900000000000205,
+        "max": 35.89999999999998,
+        "mean": 21.383775066077146,
+        "median": 21.80029856003724,
+        "std": 4.564486170935935,
+        "null_pct": 0.2851,
+        "zero_pct": 0.0
+      },
+      "cmems_thetao": {
+        "min": 16.433484912849963,
+        "max": 32.76772361341864,
+        "mean": 29.071209113308168,
+        "median": 29.18464714754373,
+        "std": 1.1007855903416954,
+        "null_pct": 0.4058,
+        "zero_pct": 0.0
+      },
+      "cmems_so": {
+        "min": 1.457301212940365,
+        "max": 36.88543348107487,
+        "mean": 33.38909003630669,
+        "median": 33.818725956371054,
+        "std": 2.71589454039329,
+        "null_pct": 0.4058,
+        "zero_pct": 0.0
+      },
+      "cmems_uo": {
+        "min": -1.297053606249392,
+        "max": 1.4510533958673477,
+        "mean": -0.0026967952632037454,
+        "median": 0.0032044434919953346,
+        "std": 0.20369295059662465,
+        "null_pct": 0.4058,
+        "zero_pct": 0.0001
+      },
+      "cmems_vo": {
+        "min": -1.8983021518215537,
+        "max": 1.3883378589525819,
+        "mean": -0.011045652886353775,
+        "median": -0.013767238706350327,
+        "std": 0.13395060736947864,
+        "null_pct": 0.4058,
+        "zero_pct": 0.0001
+      },
+      "current_magnitude": {
+        "min": 0.00015164769265943643,
+        "max": 1.901024150783836,
+        "mean": 0.18789500956703864,
+        "median": 0.14688899456885474,
+        "std": 0.15575053770015554,
+        "null_pct": 0.4058,
+        "zero_pct": 0.0
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS"
+  },
+  "vessel_activity": {
+    "path": "data/ml/sagardrishti_india_vessel_activity.parquet",
+    "rows": 5887415,
+    "columns": [
+      "lat",
+      "lon",
+      "time",
+      "flag",
+      "vessel_count",
+      "vessel_presence_hours",
+      "time_month",
+      "lat_cell",
+      "lon_cell",
+      "source",
+      "provenance",
+      "observed_vs_derived"
+    ],
+    "n_columns": 12,
+    "size_bytes": 17378138,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "lat": 0.0,
+      "lon": 0.0,
+      "time": 0.0,
+      "flag": 0.0151,
+      "vessel_count": 0.0,
+      "vessel_presence_hours": 0.0,
+      "time_month": 0.0,
+      "lat_cell": 0.0,
+      "lon_cell": 0.0,
+      "source": 0.0,
+      "provenance": 0.0,
+      "observed_vs_derived": 0.0
+    },
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "temporal_coverage_time_month": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "lat_range": [
+      2.3,
+      26.4
+    ],
+    "lon_range": [
+      65.0,
+      91.8
+    ],
+    "numeric_summary": {
+      "lat": {
+        "min": 2.3,
+        "max": 26.4,
+        "mean": 13.75114519700072,
+        "median": 13.7,
+        "std": 5.296117467447867,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "lon": {
+        "min": 65.0,
+        "max": 91.8,
+        "mean": 74.88412364339867,
+        "median": 73.2,
+        "std": 6.93960292422389,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_count": {
+        "min": 1.0,
+        "max": 634.0,
+        "mean": 2.7997861540251536,
+        "median": 1.0,
+        "std": 6.6331776970561185,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_presence_hours": {
+        "min": 1.0,
+        "max": 57982.0,
+        "mean": 9.05757246601437,
+        "median": 1.0,
+        "std": 181.6952400782095,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "lat_cell": {
+        "min": 2.25,
+        "max": 26.5,
+        "mean": 13.751326515966685,
+        "median": 13.75,
+        "std": 5.296454838632504,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "lon_cell": {
+        "min": 65.0,
+        "max": 91.75,
+        "mean": 74.88373904336623,
+        "median": 73.25,
+        "std": 6.939827169426174,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS"
+  },
+  "port_traffic": {
+    "path": "data/ml/sagardrishti_port_traffic.parquet",
+    "rows": 1548,
+    "columns": [
+      "port_id",
+      "port_name",
+      "time_month",
+      "time",
+      "vessel_activity_count",
+      "vessel_presence_hours",
+      "vessel_count_sum",
+      "mean_distance_km",
+      "n_flags",
+      "latitude",
+      "longitude",
+      "traffic_index",
+      "traffic_target",
+      "target_kind",
+      "provenance",
+      "vessel_count_note"
+    ],
+    "n_columns": 16,
+    "size_bytes": 71979,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "port_id": 0.0,
+      "port_name": 0.0,
+      "time_month": 0.0,
+      "time": 0.0,
+      "vessel_activity_count": 0.0,
+      "vessel_presence_hours": 0.0,
+      "vessel_count_sum": 0.0,
+      "mean_distance_km": 0.0,
+      "n_flags": 0.0,
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "traffic_index": 0.0,
+      "traffic_target": 0.0,
+      "target_kind": 0.0,
+      "provenance": 0.0,
+      "vessel_count_note": 0.0
+    },
+    "temporal_coverage_time_month": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "latitude_range": [
+      8.166667,
+      23.033333
+    ],
+    "longitude_range": [
+      69.083333,
+      88.333333
+    ],
+    "numeric_summary": {
+      "port_id": {
+        "min": 48613.0,
+        "max": 49560.0,
+        "mean": 49032.86046511628,
+        "median": 49000.0,
+        "std": 322.2063099630473,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_activity_count": {
+        "min": 1.0,
+        "max": 626.0,
+        "mean": 184.00710594315245,
+        "median": 175.0,
+        "std": 147.7384849541401,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_presence_hours": {
+        "min": 4.0,
+        "max": 97984.0,
+        "mean": 15647.651162790698,
+        "median": 8634.5,
+        "std": 19631.798443967273,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_count_sum": {
+        "min": 3.0,
+        "max": 7298.0,
+        "mean": 1074.529715762274,
+        "median": 802.0,
+        "std": 1213.5417774138698,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "mean_distance_km": {
+        "min": 7.602,
+        "max": 46.87533333333334,
+        "mean": 27.555805141259306,
+        "median": 29.163077012741375,
+        "std": 8.49559982374193,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "n_flags": {
+        "min": 1.0,
+        "max": 59.0,
+        "mean": 26.23578811369509,
+        "median": 27.0,
+        "std": 14.3214309857852,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "latitude": {
+        "min": 8.166667,
+        "max": 23.033333,
+        "mean": 16.85620158139535,
+        "median": 17.0,
+        "std": 5.016578855365628,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "longitude": {
+        "min": 69.083333,
+        "max": 88.333333,
+        "mean": 75.62286823255815,
+        "median": 74.266667,
+        "std": 5.114827570874641,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "traffic_index": {
+        "min": 2.2311547025799614,
+        "max": 98.6956016552117,
+        "mean": 55.76140068159901,
+        "median": 59.36907949210198,
+        "std": 20.459647967076556,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "traffic_target": {
+        "min": 4.0,
+        "max": 97984.0,
+        "mean": 15647.651162790698,
+        "median": 8634.5,
+        "std": 19631.798443967273,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS"
+  },
+  "port_congestion": {
+    "path": "data/ml/sagardrishti_port_congestion.parquet",
+    "rows": 1548,
+    "columns": [
+      "port_id",
+      "port_name",
+      "time",
+      "latitude",
+      "longitude",
+      "vessel_presence_hours",
+      "vessel_count_sum",
+      "vessel_activity_count",
+      "norm_vessel_presence_hours",
+      "norm_vessel_count_sum",
+      "norm_vessel_activity_count",
+      "congestion_index",
+      "congestion_formula",
+      "congestion_spatial",
+      "congestion_temporal",
+      "congestion_kind",
+      "provenance"
+    ],
+    "n_columns": 17,
+    "size_bytes": 76617,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "port_id": 0.0,
+      "port_name": 0.0,
+      "time": 0.0,
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "vessel_presence_hours": 0.0,
+      "vessel_count_sum": 0.0,
+      "vessel_activity_count": 0.0,
+      "norm_vessel_presence_hours": 0.0,
+      "norm_vessel_count_sum": 0.0,
+      "norm_vessel_activity_count": 0.0,
+      "congestion_index": 0.0,
+      "congestion_formula": 0.0,
+      "congestion_spatial": 0.0,
+      "congestion_temporal": 0.0,
+      "congestion_kind": 0.0,
+      "provenance": 0.0
+    },
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "latitude_range": [
+      8.166667,
+      23.033333
+    ],
+    "longitude_range": [
+      69.083333,
+      88.333333
+    ],
+    "numeric_summary": {
+      "port_id": {
+        "min": 48613.0,
+        "max": 49560.0,
+        "mean": 49032.86046511628,
+        "median": 49000.0,
+        "std": 322.2063099630473,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "latitude": {
+        "min": 8.166667,
+        "max": 23.033333,
+        "mean": 16.85620158139535,
+        "median": 17.0,
+        "std": 5.016578855365628,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "longitude": {
+        "min": 69.083333,
+        "max": 88.333333,
+        "mean": 75.62286823255815,
+        "median": 74.266667,
+        "std": 5.114827570874641,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_presence_hours": {
+        "min": 4.0,
+        "max": 97984.0,
+        "mean": 15647.651162790698,
+        "median": 8634.5,
+        "std": 19631.798443967273,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_count_sum": {
+        "min": 3.0,
+        "max": 7298.0,
+        "mean": 1074.529715762274,
+        "median": 802.0,
+        "std": 1213.5417774138698,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_activity_count": {
+        "min": 1.0,
+        "max": 626.0,
+        "mean": 184.00710594315245,
+        "median": 175.0,
+        "std": 147.7384849541401,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "norm_vessel_presence_hours": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.15966167751368338,
+        "median": 0.08808430291896305,
+        "std": 0.2003653648088107,
+        "null_pct": 0.0,
+        "zero_pct": 0.0006
+      },
+      "norm_vessel_count_sum": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.1468854990763912,
+        "median": 0.10952707333790268,
+        "std": 0.16635253974144887,
+        "null_pct": 0.0,
+        "zero_pct": 0.0006
+      },
+      "norm_vessel_activity_count": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.29281136950904396,
+        "median": 0.2784,
+        "std": 0.23638157592662418,
+        "null_pct": 0.0,
+        "zero_pct": 0.0026
+      },
+      "congestion_index": {
+        "min": 0.00064,
+        "max": 0.8952503358464703,
+        "mean": 0.18245876238156783,
+        "median": 0.14909812023015706,
+        "std": 0.16546578743900217,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS"
+  },
+  "master_training": {
+    "path": "data/ml/sagardrishti_master_training.parquet",
+    "rows": 1548,
+    "columns": [
+      "port_id",
+      "port_name",
+      "time_month",
+      "time",
+      "vessel_activity_count",
+      "vessel_presence_hours",
+      "vessel_count_sum",
+      "mean_distance_km",
+      "n_flags",
+      "latitude",
+      "longitude",
+      "traffic_index",
+      "traffic_target",
+      "target_kind",
+      "provenance",
+      "vessel_count_note",
+      "congestion_index",
+      "port_lat",
+      "port_lon",
+      "sst_monthly_mean",
+      "cmems_thetao",
+      "cmems_so",
+      "cmems_uo",
+      "cmems_vo",
+      "current_magnitude",
+      "in_india_mask",
+      "env_grid_lat",
+      "env_grid_lon",
+      "port_harbor_size",
+      "port_harbor_type",
+      "port_shelter",
+      "port_max_vessel",
+      "port_tide_range",
+      "leakage_note"
+    ],
+    "n_columns": 34,
+    "size_bytes": 98367,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "port_id": 0.0,
+      "port_name": 0.0,
+      "time_month": 0.0,
+      "time": 0.0,
+      "vessel_activity_count": 0.0,
+      "vessel_presence_hours": 0.0,
+      "vessel_count_sum": 0.0,
+      "mean_distance_km": 0.0,
+      "n_flags": 0.0,
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "traffic_index": 0.0,
+      "traffic_target": 0.0,
+      "target_kind": 0.0,
+      "provenance": 0.0,
+      "vessel_count_note": 0.0,
+      "congestion_index": 0.0,
+      "port_lat": 0.0,
+      "port_lon": 0.0,
+      "sst_monthly_mean": 1.0,
+      "cmems_thetao": 1.0,
+      "cmems_so": 1.0,
+      "cmems_uo": 1.0,
+      "cmems_vo": 1.0,
+      "current_magnitude": 1.0,
+      "in_india_mask": 1.0,
+      "env_grid_lat": 0.0,
+      "env_grid_lon": 0.0,
+      "port_harbor_size": 0.0,
+      "port_harbor_type": 0.0,
+      "port_shelter": 0.0,
+      "port_max_vessel": 0.0,
+      "port_tide_range": 0.0,
+      "leakage_note": 0.0
+    },
+    "temporal_coverage_time_month": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "latitude_range": [
+      8.166667,
+      23.033333
+    ],
+    "port_lat_range": [
+      8.166667,
+      23.033333
+    ],
+    "env_grid_lat_range": [
+      8.166651725769043,
+      22.9166259765625
+    ],
+    "longitude_range": [
+      69.083333,
+      88.333333
+    ],
+    "port_lon_range": [
+      69.083333,
+      88.333333
+    ],
+    "env_grid_lon_range": [
+      69.12493133544922,
+      88.37491607666016
+    ],
+    "numeric_summary": {
+      "port_id": {
+        "min": 48613.0,
+        "max": 49560.0,
+        "mean": 49032.86046511628,
+        "median": 49000.0,
+        "std": 322.2063099630473,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_activity_count": {
+        "min": 1.0,
+        "max": 626.0,
+        "mean": 184.00710594315245,
+        "median": 175.0,
+        "std": 147.7384849541401,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_presence_hours": {
+        "min": 4.0,
+        "max": 97984.0,
+        "mean": 15647.651162790698,
+        "median": 8634.5,
+        "std": 19631.798443967273,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_count_sum": {
+        "min": 3.0,
+        "max": 7298.0,
+        "mean": 1074.529715762274,
+        "median": 802.0,
+        "std": 1213.5417774138698,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "mean_distance_km": {
+        "min": 7.602,
+        "max": 46.87533333333334,
+        "mean": 27.555805141259306,
+        "median": 29.163077012741375,
+        "std": 8.49559982374193,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "n_flags": {
+        "min": 1.0,
+        "max": 59.0,
+        "mean": 26.23578811369509,
+        "median": 27.0,
+        "std": 14.3214309857852,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "latitude": {
+        "min": 8.166667,
+        "max": 23.033333,
+        "mean": 16.85620158139535,
+        "median": 17.0,
+        "std": 5.016578855365628,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "longitude": {
+        "min": 69.083333,
+        "max": 88.333333,
+        "mean": 75.62286823255815,
+        "median": 74.266667,
+        "std": 5.114827570874641,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "traffic_index": {
+        "min": 2.2311547025799614,
+        "max": 98.6956016552117,
+        "mean": 55.76140068159901,
+        "median": 59.36907949210198,
+        "std": 20.459647967076556,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "traffic_target": {
+        "min": 4.0,
+        "max": 97984.0,
+        "mean": 15647.651162790698,
+        "median": 8634.5,
+        "std": 19631.798443967273,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "congestion_index": {
+        "min": 0.00064,
+        "max": 0.8952503358464703,
+        "mean": 0.18245876238156783,
+        "median": 0.14909812023015706,
+        "std": 0.16546578743900217,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "port_lat": {
+        "min": 8.166667,
+        "max": 23.033333,
+        "mean": 16.85620158139535,
+        "median": 17.0,
+        "std": 5.016578855365628,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "port_lon": {
+        "min": 69.083333,
+        "max": 88.333333,
+        "mean": 75.62286823255815,
+        "median": 74.266667,
+        "std": 5.114827570874641,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "env_grid_lat": {
+        "min": 8.166651725769043,
+        "max": 22.9166259765625,
+        "mean": 16.835240364074707,
+        "median": 16.916635513305664,
+        "std": 5.0076286619988375,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "env_grid_lon": {
+        "min": 69.12493133544922,
+        "max": 88.37491607666016,
+        "mean": 75.64818448798601,
+        "median": 74.37493133544922,
+        "std": 5.123087254882345,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "port_tide_range": {
+        "min": 0.0,
+        "max": 12.0,
+        "mean": 2.744186046511628,
+        "median": 2.0,
+        "std": 2.4225158107915363,
+        "null_pct": 0.0,
+        "zero_pct": 0.093
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS",
+    "waiting_target_coverage": "8/1548"
+  },
+  "india_ports": {
+    "path": "data/reference/india_ports.parquet",
+    "rows": 44,
+    "columns": [
+      "port_id",
+      "port_name",
+      "country",
+      "latitude",
+      "longitude",
+      "wpi_index_no",
+      "wpi_region_no",
+      "harbor_size",
+      "harbor_type",
+      "shelter",
+      "chart_ref",
+      "pub_ref",
+      "max_vessel",
+      "tide_range",
+      "un_locode",
+      "source",
+      "source_version",
+      "provenance"
+    ],
+    "n_columns": 18,
+    "size_bytes": 14233,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "port_id": 0.0,
+      "port_name": 0.0,
+      "country": 0.0,
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "wpi_index_no": 0.0,
+      "wpi_region_no": 0.0,
+      "harbor_size": 0.0,
+      "harbor_type": 0.0,
+      "shelter": 0.0,
+      "chart_ref": 0.0,
+      "pub_ref": 0.0,
+      "max_vessel": 0.0,
+      "tide_range": 0.0,
+      "un_locode": 1.0,
+      "source": 0.0,
+      "source_version": 0.0,
+      "provenance": 0.0
+    },
+    "latitude_range": [
+      8.166667,
+      23.033333
+    ],
+    "longitude_range": [
+      69.083333,
+      92.75
+    ],
+    "numeric_summary": {
+      "port_id": {
+        "min": 48613.0,
+        "max": 49720.0,
+        "mean": 49048.47727272727,
+        "median": 49015.0,
+        "std": 338.35006563220765,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "latitude": {
+        "min": 8.166667,
+        "max": 23.033333,
+        "mean": 16.738636386363634,
+        "median": 16.9916665,
+        "std": 5.0752296074995105,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "longitude": {
+        "min": 69.083333,
+        "max": 92.75,
+        "mean": 76.01212122727271,
+        "median": 74.54166699999999,
+        "std": 5.728119084173381,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "wpi_index_no": {
+        "min": 48613.0,
+        "max": 49720.0,
+        "mean": 49048.47727272727,
+        "median": 49015.0,
+        "std": 338.35006563220765,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "wpi_region_no": {
+        "min": 48610.0,
+        "max": 49710.0,
+        "mean": 48841.818181818184,
+        "median": 48610.0,
+        "std": 348.26662285089304,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "tide_range": {
+        "min": 0.0,
+        "max": 12.0,
+        "mean": 2.75,
+        "median": 2.0,
+        "std": 2.4220402700548647,
+        "null_pct": 0.0,
+        "zero_pct": 0.0909
+      }
+    },
+    "validation": "PASS"
+  },
+  "port_vessel_activity": {
+    "path": "data/derived/port_vessel_activity.parquet",
+    "rows": 5887415,
+    "columns": [
+      "time",
+      "time_month",
+      "lat",
+      "lon",
+      "flag",
+      "vessel_count",
+      "vessel_presence_hours",
+      "nearest_port_idx",
+      "nearest_port_distance_km",
+      "associated_port_id",
+      "associated_port_name",
+      "association",
+      "observation",
+      "port_radius_km"
+    ],
+    "n_columns": 14,
+    "size_bytes": 23174241,
+    "duplicate_count": 0,
+    "null_percentage": {
+      "time": 0.0,
+      "time_month": 0.0,
+      "lat": 0.0,
+      "lon": 0.0,
+      "flag": 0.0151,
+      "vessel_count": 0.0,
+      "vessel_presence_hours": 0.0,
+      "nearest_port_idx": 0.0,
+      "nearest_port_distance_km": 0.0,
+      "associated_port_id": 0.9516,
+      "associated_port_name": 0.9516,
+      "association": 0.0,
+      "observation": 0.0,
+      "port_radius_km": 0.0
+    },
+    "temporal_coverage_time": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "temporal_coverage_time_month": [
+      "2021-01-01 00:00:00+00:00",
+      "2023-12-01 00:00:00+00:00"
+    ],
+    "lat_range": [
+      2.3,
+      26.4
+    ],
+    "lon_range": [
+      65.0,
+      91.8
+    ],
+    "numeric_summary": {
+      "lat": {
+        "min": 2.3,
+        "max": 26.4,
+        "mean": 13.75114519700072,
+        "median": 13.7,
+        "std": 5.296117467447867,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "lon": {
+        "min": 65.0,
+        "max": 91.8,
+        "mean": 74.88412364339867,
+        "median": 73.2,
+        "std": 6.93960292422389,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_count": {
+        "min": 1.0,
+        "max": 634.0,
+        "mean": 2.7997861540251536,
+        "median": 1.0,
+        "std": 6.6331776970561185,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "vessel_presence_hours": {
+        "min": 1.0,
+        "max": 57982.0,
+        "mean": 9.05757246601437,
+        "median": 1.0,
+        "std": 181.6952400782095,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      },
+      "nearest_port_idx": {
+        "min": 0.0,
+        "max": 43.0,
+        "mean": 23.5707812342089,
+        "median": 23.0,
+        "std": 10.34423011918498,
+        "null_pct": 0.0,
+        "zero_pct": 0.0001
+      },
+      "nearest_port_distance_km": {
+        "min": 0.0,
+        "max": 1043.76,
+        "mean": 325.3557983410376,
+        "median": 291.706,
+        "std": 214.8266460293789,
+        "null_pct": 0.0,
+        "zero_pct": 0.0001
+      },
+      "associated_port_id": {
+        "min": 48613.0,
+        "max": 49560.0,
+        "mean": 49039.86747085236,
+        "median": 49030.0,
+        "std": 311.69802066522465,
+        "null_pct": 0.9516,
+        "zero_pct": 0.0
+      },
+      "port_radius_km": {
+        "min": 50.0,
+        "max": 50.0,
+        "mean": 50.0,
+        "median": 50.0,
+        "std": 0.0,
+        "null_pct": 0.0,
+        "zero_pct": 0.0
+      }
+    },
+    "leakage_time_sorted_note": "rows sorted by time; features contemporaneous month-M only",
+    "validation": "PASS"
+  },
+  "checks": {
+    "no_future_leakage": "PASS (same-month joins only; env+traffic+master built per-month)",
+    "spatial_validation": "PASS (bbox 0-30N/65-100E enforced; mask frac env 0.3885; port-grid max offset ~0.15deg documented)",
+    "provenance": "PASS (see metadata/source_manifest.json)",
+    "waiting_time_rule": "PASS (no waiting_time artifact created; reported UNAVAILABLE)",
+    "infinite_values": "checked per numeric summary",
+    "waiting_time_leakage": "PASS (same-month join; X_features exclude waiting columns)"
+  },
+  "port_waiting_time": {
+    "path": "data/ml/sagardrishti_port_waiting_time.parquet",
+    "rows": 8,
+    "n_columns": 18,
+    "ports_covered": 1,
+    "months_covered": [
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-12"
+    ],
+    "total_vessels": 1785,
+    "valid_waiting_events": 1785,
+    "rejected": [
+      "2023-11 (PDF 404)"
+    ],
+    "min": 0.91,
+    "max": 1.33,
+    "mean": 1.1775,
+    "median": 1.205,
+    "std": 0.1277,
+    "null_pct": 0.0,
+    "duplicate_count": 0,
+    "validation": "PASS (weighted-mean cross-checks; non-negative; chronological; Jun-2023 source-carryover flagged)"
+  }
+}

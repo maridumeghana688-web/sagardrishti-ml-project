@@ -1,0 +1,1 @@
+"""SAGARDRISHTI backend application package."""
